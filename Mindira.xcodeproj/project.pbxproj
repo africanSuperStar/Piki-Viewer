@@ -35,6 +35,10 @@
 		A542336526B5BCBA00DD003A /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542336426B5BCBA00DD003A /* PhotoCell.swift */; };
 		A542336926B5E9FD00DD003A /* Mindera.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A542336726B5E9FD00DD003A /* Mindera.xcdatamodeld */; };
 		A542336B26B5EC0E00DD003A /* NSManagedObject+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542336A26B5EC0E00DD003A /* NSManagedObject+Ext.swift */; };
+		A542336D26B5EFC100DD003A /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542336C26B5EFC100DD003A /* Scheduler.swift */; };
+		A542337026B5F25400DD003A /* FlickrSearchObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542336F26B5F25400DD003A /* FlickrSearchObject.swift */; };
+		A542337226B5F33900DD003A /* FlickrSearchStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542337126B5F33900DD003A /* FlickrSearchStorage.swift */; };
+		A542337426B5FD5000DD003A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542337326B5FD5000DD003A /* CoreDataManager.swift */; };
 		A5D88E9E26B48C310016CC8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88E9D26B48C310016CC8F /* AppDelegate.swift */; };
 		A5D88EA226B48C310016CC8F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88EA126B48C310016CC8F /* MainViewController.swift */; };
 		A5D88EA726B48C310016CC8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5D88EA626B48C310016CC8F /* Assets.xcassets */; };
@@ -89,6 +93,10 @@
 		A542336426B5BCBA00DD003A /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		A542336826B5E9FD00DD003A /* Mindera.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Mindera.xcdatamodel; sourceTree = "<group>"; };
 		A542336A26B5EC0E00DD003A /* NSManagedObject+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Ext.swift"; sourceTree = "<group>"; };
+		A542336C26B5EFC100DD003A /* Scheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
+		A542336F26B5F25400DD003A /* FlickrSearchObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrSearchObject.swift; sourceTree = "<group>"; };
+		A542337126B5F33900DD003A /* FlickrSearchStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrSearchStorage.swift; sourceTree = "<group>"; };
+		A542337326B5FD5000DD003A /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		A5D88E9A26B48C310016CC8F /* Mindira.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mindira.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5D88E9D26B48C310016CC8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5D88EA126B48C310016CC8F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -235,10 +243,22 @@
 		A542336626B5E9E700DD003A /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
+				A542336E26B5F24600DD003A /* Model */,
 				A542336726B5E9FD00DD003A /* Mindera.xcdatamodeld */,
 				A542336A26B5EC0E00DD003A /* NSManagedObject+Ext.swift */,
+				A542336C26B5EFC100DD003A /* Scheduler.swift */,
+				A542337326B5FD5000DD003A /* CoreDataManager.swift */,
 			);
 			path = Persistence;
+			sourceTree = "<group>";
+		};
+		A542336E26B5F24600DD003A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A542336F26B5F25400DD003A /* FlickrSearchObject.swift */,
+				A542337126B5F33900DD003A /* FlickrSearchStorage.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		A5D88E9126B48C310016CC8F = {
@@ -431,6 +451,7 @@
 				A542333026B54B9100DD003A /* Cache.swift in Sources */,
 				A542334E26B55C4F00DD003A /* SecureStore.swift in Sources */,
 				A542335326B55C7D00DD003A /* NetworkCenter+Token.swift in Sources */,
+				A542337426B5FD5000DD003A /* CoreDataManager.swift in Sources */,
 				A542335026B55C4F00DD003A /* SecureStoreQueryable.swift in Sources */,
 				A542336B26B5EC0E00DD003A /* NSManagedObject+Ext.swift in Sources */,
 				A542334426B5569D00DD003A /* NetworkCenter+Response.swift in Sources */,
@@ -443,12 +464,14 @@
 				A542335826B561ED00DD003A /* FlickrSearch.swift in Sources */,
 				A542332926B5481800DD003A /* AnyModel.swift in Sources */,
 				A542333C26B555C500DD003A /* Items.swift in Sources */,
+				A542337226B5F33900DD003A /* FlickrSearchStorage.swift in Sources */,
 				A542332B26B54A7800DD003A /* NetworkCenter+Headers.swift in Sources */,
 				A542335C26B5A75300DD003A /* FlickrSize.swift in Sources */,
 				A542335626B55E1500DD003A /* Flickr.swift in Sources */,
 				A542332D26B54B2100DD003A /* NetworkCenter+URL.swift in Sources */,
 				A542336926B5E9FD00DD003A /* Mindera.xcdatamodeld in Sources */,
 				A542333D26B555C500DD003A /* Item.swift in Sources */,
+				A542336D26B5EFC100DD003A /* Scheduler.swift in Sources */,
 				A542334F26B55C4F00DD003A /* InternetProtocol.swift in Sources */,
 				A542333226B54CC400DD003A /* CacheManager.swift in Sources */,
 				A5D88E9E26B48C310016CC8F /* AppDelegate.swift in Sources */,
@@ -456,6 +479,7 @@
 				A542332626B547E600DD003A /* NetworkCenter.swift in Sources */,
 				A542332426B5460800DD003A /* INetworkCenter.swift in Sources */,
 				A542336526B5BCBA00DD003A /* PhotoCell.swift in Sources */,
+				A542337026B5F25400DD003A /* FlickrSearchObject.swift in Sources */,
 				A542334D26B55C4F00DD003A /* SecureStoreError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

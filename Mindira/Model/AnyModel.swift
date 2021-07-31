@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 
 
 protocol AnyModel : Codable, Identifiable where ID == String?

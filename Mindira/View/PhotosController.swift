@@ -110,6 +110,12 @@ extension PhotosController
             self.photos.removeAll()
         }
         
+        FlickrPhotosStorage
+            .savePhotos(searchResults: result.photos?.photo ?? [])
+            .replaceError(with: ())
+            .sink { _ in }
+            .cancel()
+        
         for searchResult in (result.photos?.photo ?? []).prefix(5)
         {
             guard let _id = searchResult.id else { continue }

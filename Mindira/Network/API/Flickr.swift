@@ -16,6 +16,8 @@ extension NetworkCenter
     {
         print("INFO: Search Flickr with Tags and page.")
         
+        
+        
         return callItem(
             "/services/rest/",
             with: [
