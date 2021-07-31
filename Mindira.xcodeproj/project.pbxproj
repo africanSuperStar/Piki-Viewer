@@ -3,14 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A542331826B5158000DD003A /* PinLayout in Frameworks */ = {isa = PBXBuildFile; productRef = A542331726B5158000DD003A /* PinLayout */; };
 		A5D88E9E26B48C310016CC8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88E9D26B48C310016CC8F /* AppDelegate.swift */; };
-		A5D88EA026B48C310016CC8F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88E9F26B48C310016CC8F /* SceneDelegate.swift */; };
 		A5D88EA226B48C310016CC8F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88EA126B48C310016CC8F /* ViewController.swift */; };
-		A5D88EA526B48C310016CC8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5D88EA326B48C310016CC8F /* Main.storyboard */; };
 		A5D88EA726B48C310016CC8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5D88EA626B48C310016CC8F /* Assets.xcassets */; };
 		A5D88EAA26B48C310016CC8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5D88EA826B48C310016CC8F /* LaunchScreen.storyboard */; };
 		A5D88EB526B48C310016CC8F /* MindiraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88EB426B48C310016CC8F /* MindiraTests.swift */; };
@@ -37,9 +36,7 @@
 /* Begin PBXFileReference section */
 		A5D88E9A26B48C310016CC8F /* Mindira.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mindira.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5D88E9D26B48C310016CC8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A5D88E9F26B48C310016CC8F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A5D88EA126B48C310016CC8F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A5D88EA426B48C310016CC8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A5D88EA626B48C310016CC8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5D88EA926B48C310016CC8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5D88EAB26B48C310016CC8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A542331826B5158000DD003A /* PinLayout in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,9 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				A5D88E9D26B48C310016CC8F /* AppDelegate.swift */,
-				A5D88E9F26B48C310016CC8F /* SceneDelegate.swift */,
 				A5D88EA126B48C310016CC8F /* ViewController.swift */,
-				A5D88EA326B48C310016CC8F /* Main.storyboard */,
 				A5D88EA626B48C310016CC8F /* Assets.xcassets */,
 				A5D88EA826B48C310016CC8F /* LaunchScreen.storyboard */,
 				A5D88EAB26B48C310016CC8F /* Info.plist */,
@@ -144,6 +140,9 @@
 			dependencies = (
 			);
 			name = Mindira;
+			packageProductDependencies = (
+				A542331726B5158000DD003A /* PinLayout */,
+			);
 			productName = Mindira;
 			productReference = A5D88E9A26B48C310016CC8F /* Mindira.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +214,9 @@
 				Base,
 			);
 			mainGroup = A5D88E9126B48C310016CC8F;
+			packageReferences = (
+				A542331626B5158000DD003A /* XCRemoteSwiftPackageReference "PinLayout" */,
+			);
 			productRefGroup = A5D88E9B26B48C310016CC8F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -233,7 +235,6 @@
 			files = (
 				A5D88EAA26B48C310016CC8F /* LaunchScreen.storyboard in Resources */,
 				A5D88EA726B48C310016CC8F /* Assets.xcassets in Resources */,
-				A5D88EA526B48C310016CC8F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,7 +261,6 @@
 			files = (
 				A5D88EA226B48C310016CC8F /* ViewController.swift in Sources */,
 				A5D88E9E26B48C310016CC8F /* AppDelegate.swift in Sources */,
-				A5D88EA026B48C310016CC8F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,14 +296,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A5D88EA326B48C310016CC8F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A5D88EA426B48C310016CC8F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A5D88EA826B48C310016CC8F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -593,6 +585,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A542331626B5158000DD003A /* XCRemoteSwiftPackageReference "PinLayout" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/layoutBox/PinLayout.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.10.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A542331726B5158000DD003A /* PinLayout */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A542331626B5158000DD003A /* XCRemoteSwiftPackageReference "PinLayout" */;
+			productName = PinLayout;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A5D88E9226B48C310016CC8F /* Project object */;
 }
