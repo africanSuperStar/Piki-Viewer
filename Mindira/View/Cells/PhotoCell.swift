@@ -40,6 +40,11 @@ extension PhotoCell
         
         imageView.contentMode = .scaleAspectFit
         
+        imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 10
+        imageView.layer.borderWidth  = 3
+        imageView.layer.borderColor  = UIColor.black.cgColor
+        
         label.font = UIFont.preferredFont(forTextStyle: .body)
         label.adjustsFontForContentSizeCategory = true
         
@@ -54,11 +59,12 @@ extension PhotoCell
         layer.cornerRadius    = 20
         layer.backgroundColor = UIColor.white.cgColor
         
+        let horizontalInset = CGFloat(20)
         let inset = CGFloat(10)
         
         NSLayoutConstraint.activate([
-            imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: inset),
-            imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -inset),
+            imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: horizontalInset),
+            imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -horizontalInset),
             imageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             imageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: inset),
             

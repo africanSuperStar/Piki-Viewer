@@ -125,7 +125,7 @@ extension MainViewController
             
             let contentSize = layoutEnvironment.container.effectiveContentSize
             let columns = contentSize.width > 800 ? 3 : 2
-            let spacing = CGFloat(10)
+            let spacing = CGFloat(20)
             
             let itemSize = NSCollectionLayoutSize(widthDimension:  .fractionalWidth(1.0),
                                                   heightDimension: .fractionalHeight(1.0))
