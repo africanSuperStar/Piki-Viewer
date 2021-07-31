@@ -103,7 +103,7 @@ extension PhotosController
     {
         var _photos = [Photo]()
      
-        for searchResult in (result.photos?.photo ?? [])
+        for searchResult in (result.photos?.photo ?? []).prefix(5)
         {
             guard let _id = searchResult.id else { continue }
             

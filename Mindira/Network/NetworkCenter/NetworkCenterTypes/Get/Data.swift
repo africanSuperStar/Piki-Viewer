@@ -14,7 +14,7 @@ extension NetworkCenter
     @discardableResult
     internal func getData(from url: URL, retries: Int = 1) -> AnyPublisher <Data, URLError>
     {
-        guard let request = get
+        guard let data = try? Data(contentsOf: url)
             else
         {
             return Fail(
@@ -24,15 +24,8 @@ extension NetworkCenter
             .eraseToAnyPublisher()
         }
         
-        return session.dataTaskPublisher(for: request)
-            .map
-            {
-                print("HTTP: DATA RECIEVED \($0.data.debugDescription)")
-                
-                return $0.data
-            }
-            .receive(on: scheduler)
-            .retry(retries)
+        return Just(data)
+            .setFailureType(to: URLError.self)
             .eraseToAnyPublisher()
     }
 }

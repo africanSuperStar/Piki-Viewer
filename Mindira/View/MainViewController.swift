@@ -67,7 +67,8 @@ extension MainViewController
         {
             (cell, indexPath, photo) in
             
-            cell.label.text = photo.flickrSearch.title
+            cell.imageView.image = UIImage(data: photo.imageData)
+            cell.label.text      = photo.flickrSearch.title
         }
         
         dataSource = UICollectionViewDiffableDataSource<Section, PhotosController.Photo>(
