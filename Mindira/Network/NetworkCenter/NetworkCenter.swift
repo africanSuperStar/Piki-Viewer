@@ -47,6 +47,8 @@ class NetworkCenter <T: AnyModel> : NSObject, INetworkCenter, URLSessionDelegate
         
         self.scheme      = "https"
         self.host        = "api.flickr.com"
+        
+        // TODO: Store Token Securely
         self.accessToken = "f9cc014fa76b098f9e82f1c288379ea1"
                 
         self.session = URLSession(configuration: configuration,

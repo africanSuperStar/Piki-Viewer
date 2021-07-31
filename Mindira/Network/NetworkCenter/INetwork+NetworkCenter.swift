@@ -121,4 +121,11 @@ extension NetworkCenter
     {
         callee(_path: path, _params: params, getItems)
     }
+    
+    @discardableResult
+    internal func callURL (_ url: URL)
+    -> AnyPublisher <Data, URLError>
+    {
+        getData(from: url)
+    }
 }
