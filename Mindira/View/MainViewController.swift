@@ -87,7 +87,7 @@ extension MainViewController
     func watchTextField()
     {
         $nameFilter
-            .debounce(for: .milliseconds(100), scheduler: DispatchQueue.main)
+            .debounce(for: .milliseconds(200), scheduler: DispatchQueue.main)
             .sink
             {
                 [weak self] value in guard let this = self else { return }
