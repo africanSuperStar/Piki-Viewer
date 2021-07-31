@@ -8,14 +8,14 @@
 import Foundation
 
 
-protocol AnyModel : Codable, Identifiable where ID == String
+protocol AnyModel : Codable, Identifiable where ID == String?
 {
     typealias Role = Codable
 }
 
 extension AnyModel
 {
-    var id: String
+    var id: String?
     {
         return UUID().uuidString
     }

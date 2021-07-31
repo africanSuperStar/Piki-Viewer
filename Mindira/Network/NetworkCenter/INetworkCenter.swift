@@ -19,6 +19,14 @@ protocol INetworkCenter
     var host: String? { get set }
     
     var accessToken: String? { get set }
+
+    func getItem <T: _T.Role> (
+        _ host:      String,
+        path:        String,
+        with params: [String : Any]?,
+        headers:     [String : String]?,
+        retries:     Int
+    ) -> AnyPublisher <T, Error>
     
     func getItems <T: _T.Role> (
         _ host:      String,

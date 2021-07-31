@@ -33,7 +33,12 @@ extension NetworkCenter
         }
         
         return session.dataTaskPublisher(for: request)
-            .map { $0.data }
+            .map
+            {
+                print("HTTP: DATA RECIEVED \($0.data.debugDescription)")
+                
+                return $0.data
+            }
             .decode(type: [T].self, decoder: JSONDecoder())
             .receive(on: scheduler)
             .retry(retries)

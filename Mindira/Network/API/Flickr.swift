@@ -11,11 +11,11 @@ import Combine
 extension NetworkCenter
 {
     @discardableResult
-    func searchFlickr <T: _T.Role> (tags: String, page: Int) throws -> AnyPublisher <[T], Error>
+    func searchFlickr <T: _T.Role> (tags: String, page: Int) throws -> AnyPublisher <T, Error>
     {
         print("INFO: Search Flickr with Tags and page.")
         
-        return callItems(
+        return callItem(
             "/services/rest/",
             with: [
                 "method": "flickr.photos.search",

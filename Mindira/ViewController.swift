@@ -11,7 +11,7 @@ import Combine
 
 class MainViewController: UIViewController
 {
-    @Network<FlickrSearchResult>(key: "flicker-search-result")
+    @Network<FlickrPhotos>(key: "flicker-search-result")
     var network
     
     var bag = Set<AnyCancellable>()
@@ -21,7 +21,7 @@ class MainViewController: UIViewController
         super.viewDidLoad()
         
         try? network?.searchFlickr(tags: "kitten", page: 1)
-            .replaceError(with: [FlickrSearchResult]())
+            .replaceError(with: [FlickrPhotos]())
             .sink(receiveValue:
             {
                 print($0.debugDescription)
