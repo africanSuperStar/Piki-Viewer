@@ -20,6 +20,12 @@
 		A542333D26B555C500DD003A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542333826B555C500DD003A /* Item.swift */; };
 		A542334226B5562800DD003A /* NetworkCenterErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542334126B5562800DD003A /* NetworkCenterErrors.swift */; };
 		A542334426B5569D00DD003A /* NetworkCenter+Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542334326B5569D00DD003A /* NetworkCenter+Response.swift */; };
+		A542334C26B55C4F00DD003A /* InternetAuthenticateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542334626B55C4F00DD003A /* InternetAuthenticateType.swift */; };
+		A542334D26B55C4F00DD003A /* SecureStoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542334726B55C4F00DD003A /* SecureStoreError.swift */; };
+		A542334E26B55C4F00DD003A /* SecureStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542334826B55C4F00DD003A /* SecureStore.swift */; };
+		A542334F26B55C4F00DD003A /* InternetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542334926B55C4F00DD003A /* InternetProtocol.swift */; };
+		A542335026B55C4F00DD003A /* SecureStoreQueryable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542334A26B55C4F00DD003A /* SecureStoreQueryable.swift */; };
+		A542335326B55C7D00DD003A /* NetworkCenter+Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542335226B55C7D00DD003A /* NetworkCenter+Token.swift */; };
 		A5D88E9E26B48C310016CC8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88E9D26B48C310016CC8F /* AppDelegate.swift */; };
 		A5D88EA226B48C310016CC8F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88EA126B48C310016CC8F /* ViewController.swift */; };
 		A5D88EA726B48C310016CC8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5D88EA626B48C310016CC8F /* Assets.xcassets */; };
@@ -59,6 +65,12 @@
 		A542333826B555C500DD003A /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		A542334126B5562800DD003A /* NetworkCenterErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCenterErrors.swift; sourceTree = "<group>"; };
 		A542334326B5569D00DD003A /* NetworkCenter+Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkCenter+Response.swift"; sourceTree = "<group>"; };
+		A542334626B55C4F00DD003A /* InternetAuthenticateType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternetAuthenticateType.swift; sourceTree = "<group>"; };
+		A542334726B55C4F00DD003A /* SecureStoreError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecureStoreError.swift; sourceTree = "<group>"; };
+		A542334826B55C4F00DD003A /* SecureStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecureStore.swift; sourceTree = "<group>"; };
+		A542334926B55C4F00DD003A /* InternetProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternetProtocol.swift; sourceTree = "<group>"; };
+		A542334A26B55C4F00DD003A /* SecureStoreQueryable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecureStoreQueryable.swift; sourceTree = "<group>"; };
+		A542335226B55C7D00DD003A /* NetworkCenter+Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkCenter+Token.swift"; sourceTree = "<group>"; };
 		A5D88E9A26B48C310016CC8F /* Mindira.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mindira.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5D88E9D26B48C310016CC8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5D88EA126B48C310016CC8F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +113,7 @@
 		A542331E26B52B6200DD003A /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				A542334526B55C4F00DD003A /* SecureStore */,
 				A542332E26B54B8100DD003A /* Cache */,
 				A542332226B545F600DD003A /* NetworkCenter */,
 				A542332026B52B7700DD003A /* Network.swift */,
@@ -126,6 +139,7 @@
 				A542333326B553C700DD003A /* INetwork+NetworkCenter.swift */,
 				A542334126B5562800DD003A /* NetworkCenterErrors.swift */,
 				A542334326B5569D00DD003A /* NetworkCenter+Response.swift */,
+				A542335226B55C7D00DD003A /* NetworkCenter+Token.swift */,
 			);
 			path = NetworkCenter;
 			sourceTree = "<group>";
@@ -162,6 +176,18 @@
 				A542333826B555C500DD003A /* Item.swift */,
 			);
 			path = Get;
+			sourceTree = "<group>";
+		};
+		A542334526B55C4F00DD003A /* SecureStore */ = {
+			isa = PBXGroup;
+			children = (
+				A542334626B55C4F00DD003A /* InternetAuthenticateType.swift */,
+				A542334726B55C4F00DD003A /* SecureStoreError.swift */,
+				A542334826B55C4F00DD003A /* SecureStore.swift */,
+				A542334926B55C4F00DD003A /* InternetProtocol.swift */,
+				A542334A26B55C4F00DD003A /* SecureStoreQueryable.swift */,
+			);
+			path = SecureStore;
 			sourceTree = "<group>";
 		};
 		A5D88E9126B48C310016CC8F = {
@@ -352,7 +378,11 @@
 			files = (
 				A542332126B52B7700DD003A /* Network.swift in Sources */,
 				A542333026B54B9100DD003A /* Cache.swift in Sources */,
+				A542334E26B55C4F00DD003A /* SecureStore.swift in Sources */,
+				A542335326B55C7D00DD003A /* NetworkCenter+Token.swift in Sources */,
+				A542335026B55C4F00DD003A /* SecureStoreQueryable.swift in Sources */,
 				A542334426B5569D00DD003A /* NetworkCenter+Response.swift in Sources */,
+				A542334C26B55C4F00DD003A /* InternetAuthenticateType.swift in Sources */,
 				A5D88EA226B48C310016CC8F /* ViewController.swift in Sources */,
 				A542334226B5562800DD003A /* NetworkCenterErrors.swift in Sources */,
 				A542332926B5481800DD003A /* AnyModel.swift in Sources */,
@@ -360,11 +390,13 @@
 				A542332B26B54A7800DD003A /* NetworkCenter+Headers.swift in Sources */,
 				A542332D26B54B2100DD003A /* NetworkCenter+URL.swift in Sources */,
 				A542333D26B555C500DD003A /* Item.swift in Sources */,
+				A542334F26B55C4F00DD003A /* InternetProtocol.swift in Sources */,
 				A542333226B54CC400DD003A /* CacheManager.swift in Sources */,
 				A5D88E9E26B48C310016CC8F /* AppDelegate.swift in Sources */,
 				A542333426B553C700DD003A /* INetwork+NetworkCenter.swift in Sources */,
 				A542332626B547E600DD003A /* NetworkCenter.swift in Sources */,
 				A542332426B5460800DD003A /* INetworkCenter.swift in Sources */,
+				A542334D26B55C4F00DD003A /* SecureStoreError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

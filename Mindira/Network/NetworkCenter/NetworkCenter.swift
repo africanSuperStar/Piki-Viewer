@@ -17,7 +17,8 @@ class NetworkCenter <T: AnyModel> : NSObject, INetworkCenter, URLSessionDelegate
     
     // MARK: - Stored Properties
     
-    internal let scheduler: DispatchQueue
+    internal let secureStore: SecureStore?
+    internal let scheduler:   DispatchQueue
     
     var session: URLSession = URLSession.shared
     
@@ -37,6 +38,8 @@ class NetworkCenter <T: AnyModel> : NSObject, INetworkCenter, URLSessionDelegate
                                        autoreleaseFrequency: .inherit,
                                        target: .global()
         )
+        
+        self.secureStore = SecureStore(secureStoreQueryable: GenericPasswordQueryable(service: "MinderaService"))
         
         self._key = key
         
