@@ -16,7 +16,10 @@ extension NetworkCenter
     {
         print("INFO: Search Flickr with Tags and page.")
         
-        
+        if !(CacheManager.isRemote.single ?? false)
+        {
+            return FlickrPhotosStorage.fetchPhotos()
+        }
         
         return callItem(
             "/services/rest/",
@@ -35,6 +38,11 @@ extension NetworkCenter
     func getSizes <T: _T.Role> (photoId: String) throws -> AnyPublisher <T, Error>
     {
         print("INFO: Get Sizes/URLs for a single image.")
+        
+        if !(CacheManager.isRemote.single ?? false)
+        {
+            return FlickrSizeStorage.fetchSizes(for: photoId)
+        }
         
         return callItem(
             "/services/rest/",

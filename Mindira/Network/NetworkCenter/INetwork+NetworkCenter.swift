@@ -54,8 +54,6 @@ extension NetworkCenter
         }
         else
         {
-            // TODO: Get Data Locally
-            
             return Fail(
                 outputType: T.self,
                 failure: NetworkCenterError.failedToRetrieveValue

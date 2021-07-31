@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Network
 import Combine
 
 
@@ -28,6 +29,8 @@ class MainViewController: UIViewController
     var bag = Set<AnyCancellable>()
     
     let photosController = PhotosController()
+    
+    let monitor = NWPathMonitor()
     
     // MARK: Lazy View Properties
     
@@ -56,6 +59,31 @@ class MainViewController: UIViewController
         configureHierarchy()
         configureDataSource()
         watchTextField()
+    }
+}
+
+extension MainViewController
+{
+    /// - Tag: NWPathMonitor
+    
+    func configureNetworkMonitor()
+    {
+        monitor.pathUpdateHandler = {
+            
+            path in
+            
+            if path.status == .satisfied
+            {
+                CacheManager.isRemote.update(true, forKey: .isRemote)
+            }
+            else
+            {
+                CacheManager.isRemote.update(false, forKey: .isRemote)
+            }
+        }
+        
+        let queue = DispatchQueue(label: "NWPathMonitor")
+        monitor.start(queue: queue)
     }
 }
 

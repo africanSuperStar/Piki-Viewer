@@ -126,6 +126,15 @@ extension PhotosController
     
     private func sortSizes(flickrSizes: FlickrSizes, searchResult: FlickrSearchResult)
     {
+        if let photoId = searchResult.id
+        {
+            FlickrSizeStorage
+                .saveSizes(for: photoId, sizes: flickrSizes.sizes?.size ?? [])
+                .replaceError(with: ())
+                .sink { _ in }
+                .cancel()
+        }
+        
         if let size = flickrSizes.sizes?.size?.filter({ $0.label == "Large Square" }).first
         {
             if let source = size.source,
