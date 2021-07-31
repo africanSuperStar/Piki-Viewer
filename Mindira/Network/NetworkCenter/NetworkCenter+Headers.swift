@@ -19,7 +19,10 @@ extension NetworkCenter
             var request = URLRequest(url: url)
             
             request.httpMethod = "GET"
-            request.setValue("application/json", forHTTPHeaderField: "Content-Tyoe")
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.setValue(headers["Authorization"], forHTTPHeaderField: "Authorization")
+            
+            return request
         }
     }
 }
