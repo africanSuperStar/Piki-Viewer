@@ -21,10 +21,10 @@ class MainViewController: UIViewController
         super.viewDidLoad()
         
         try? network?.searchFlickr(tags: "kitten", page: 1)
-            .replaceError(with: [FlickrPhotos]())
+            .replaceError(with: FlickrPhotos(photos: nil, stat: "NO SUCCESS"))
             .sink(receiveValue:
             {
-                print($0.debugDescription)
+                print("\($0.photos?.page ?? 0)")
             })
             
             .store(in: &bag)

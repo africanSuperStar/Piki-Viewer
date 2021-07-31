@@ -33,13 +33,14 @@ extension NetworkCenter
         }
         
         return session.dataTaskPublisher(for: request)
-            .map
+            .tryMap
             {
-                print("HTTP: DATA RECIEVED \($0.data.debugDescription)")
+                [weak self] value in guard let this = self else { throw NetworkCenterError.failedToDecodeItems }
                 
-                return $0.data
+                print("HTTP: DATA RECIEVED \(value.data.debugDescription)")
+                
+                return try this.decode(value.data, with: value.response)
             }
-            .decode(type: T.self, decoder: JSONDecoder())
             .receive(on: scheduler)
             .retry(retries)
             .eraseToAnyPublisher()

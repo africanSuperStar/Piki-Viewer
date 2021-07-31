@@ -27,7 +27,7 @@
 		A542335026B55C4F00DD003A /* SecureStoreQueryable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542334A26B55C4F00DD003A /* SecureStoreQueryable.swift */; };
 		A542335326B55C7D00DD003A /* NetworkCenter+Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542335226B55C7D00DD003A /* NetworkCenter+Token.swift */; };
 		A542335626B55E1500DD003A /* Flickr.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542335526B55E1500DD003A /* Flickr.swift */; };
-		A542335826B561ED00DD003A /* FlickrSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542335726B561ED00DD003A /* FlickrSearchResult.swift */; };
+		A542335826B561ED00DD003A /* FlickrSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542335726B561ED00DD003A /* FlickrSearch.swift */; };
 		A5D88E9E26B48C310016CC8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88E9D26B48C310016CC8F /* AppDelegate.swift */; };
 		A5D88EA226B48C310016CC8F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88EA126B48C310016CC8F /* ViewController.swift */; };
 		A5D88EA726B48C310016CC8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5D88EA626B48C310016CC8F /* Assets.xcassets */; };
@@ -74,7 +74,7 @@
 		A542334A26B55C4F00DD003A /* SecureStoreQueryable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecureStoreQueryable.swift; sourceTree = "<group>"; };
 		A542335226B55C7D00DD003A /* NetworkCenter+Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkCenter+Token.swift"; sourceTree = "<group>"; };
 		A542335526B55E1500DD003A /* Flickr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flickr.swift; sourceTree = "<group>"; };
-		A542335726B561ED00DD003A /* FlickrSearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrSearchResult.swift; sourceTree = "<group>"; };
+		A542335726B561ED00DD003A /* FlickrSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrSearch.swift; sourceTree = "<group>"; };
 		A5D88E9A26B48C310016CC8F /* Mindira.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mindira.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5D88E9D26B48C310016CC8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5D88EA126B48C310016CC8F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -153,7 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				A542332826B5481800DD003A /* AnyModel.swift */,
-				A542335726B561ED00DD003A /* FlickrSearchResult.swift */,
+				A542335726B561ED00DD003A /* FlickrSearch.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -399,7 +399,7 @@
 				A542334C26B55C4F00DD003A /* InternetAuthenticateType.swift in Sources */,
 				A5D88EA226B48C310016CC8F /* ViewController.swift in Sources */,
 				A542334226B5562800DD003A /* NetworkCenterErrors.swift in Sources */,
-				A542335826B561ED00DD003A /* FlickrSearchResult.swift in Sources */,
+				A542335826B561ED00DD003A /* FlickrSearch.swift in Sources */,
 				A542332926B5481800DD003A /* AnyModel.swift in Sources */,
 				A542333C26B555C500DD003A /* Items.swift in Sources */,
 				A542332B26B54A7800DD003A /* NetworkCenter+Headers.swift in Sources */,
