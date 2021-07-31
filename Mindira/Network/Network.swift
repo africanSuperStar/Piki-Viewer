@@ -16,19 +16,15 @@ class Network <T: AnyModel> : ObservableObject
     
     init(key: String)
     {
-        self.key = key
+        self.key     = key
+        self.network = NetworkCenter<T>(key: key)
     }
     
     @Published
-    private(set) var network: NetworkCenter<T>?
+    private(set) var network: NetworkCenter<T>
     
-    var wrappedValue: NetworkCenter<T>?
+    var wrappedValue: NetworkCenter<T>
     {
         get { network }
-        
-        set
-        {
-            network = NetworkCenter<T>(key: key)
-        }
     }
 }

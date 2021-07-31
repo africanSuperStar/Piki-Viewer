@@ -9,6 +9,11 @@ import UIKit
 import Combine
 
 
+protocol MainViewDelegate : AnyObject
+{
+    func photosGenerated()
+}
+
 class MainViewController: UIViewController
 {
     enum Section: CaseIterable
@@ -34,7 +39,7 @@ class MainViewController: UIViewController
     
     // MARK: DataSource
     
-    var dataSource: UICollectionViewDiffableDataSource<Section, PhotosController.Mountain>!
+    var dataSource: UICollectionViewDiffableDataSource<Section, PhotosController.Photo>!
     
     // MARK: View Lifecycle
     
@@ -43,6 +48,8 @@ class MainViewController: UIViewController
         super.viewDidLoad()
     
         navigationItem.title = "Flickr Photo Search"
+        
+        photosController.delegate = self
         
         configureHierarchy()
         configureDataSource()
@@ -56,27 +63,128 @@ extension MainViewController
     
     func configureDataSource()
     {
-        let cellRegistration = UICollectionView.CellRegistration<LabelCell, PhotosController.Mountain>
+        let cellRegistration = UICollectionView.CellRegistration<PhotoCell, PhotosController.Photo>
         {
-            (cell, indexPath, mountain) in
+            (cell, indexPath, photo) in
             
-            cell.label.text = mountain.name
+            cell.label.text = photo.flickrSearch.title
         }
         
-        dataSource = UICollectionViewDiffableDataSource<Section, MountainsController.Mountain>(collectionView: mountainsCollectionView) {
-            (collectionView: UICollectionView, indexPath: IndexPath, identifier: MountainsController.Mountain) -> UICollectionViewCell? in
-            // Return the cell.
+        dataSource = UICollectionViewDiffableDataSource<Section, PhotosController.Photo>(
+            collectionView: photosCollectionView
+        ) {
+            (collectionView: UICollectionView, indexPath: IndexPath, identifier: PhotosController.Photo) -> UICollectionViewCell? in
+            
             return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: identifier)
         }
     }
     
-    /// - Tag: MountainsPerformQuery
-    func performQuery(with filter: String?) {
-        let mountains = mountainsController.filteredMountains(with: filter).sorted { $0.name < $1.name }
+    /// - Tag: PhotosPerformQuery
+    
+    func performQuery(with filter: String?)
+    {
+        photosController.searchPhotos(with: "kittens", page: 1)
+    }
+}
 
-        var snapshot = NSDiffableDataSourceSnapshot<Section, MountainsController.Mountain>()
+extension MainViewController : MainViewDelegate
+{
+    func photosGenerated()
+    {
+        var snapshot = NSDiffableDataSourceSnapshot<Section, PhotosController.Photo>()
+        
         snapshot.appendSections([.main])
-        snapshot.appendItems(mountains)
+        snapshot.appendItems(photosController.photos)
+ 
         dataSource.apply(snapshot, animatingDifferences: true)
+    }
+}
+
+extension MainViewController
+{
+    func createLayout() -> UICollectionViewLayout
+    {
+        let layout = UICollectionViewCompositionalLayout
+        {
+            (
+                sectionIndex:      Int,
+                layoutEnvironment: NSCollectionLayoutEnvironment
+            )
+            -> NSCollectionLayoutSection in
+            
+            let contentSize = layoutEnvironment.container.effectiveContentSize
+            let columns = contentSize.width > 800 ? 3 : 2
+            let spacing = CGFloat(10)
+            
+            let itemSize = NSCollectionLayoutSize(widthDimension:  .fractionalWidth(1.0),
+                                                  heightDimension: .fractionalHeight(1.0))
+            
+            let item = NSCollectionLayoutItem(layoutSize: itemSize)
+            
+            let groupSize = NSCollectionLayoutSize(widthDimension:  .fractionalWidth(1.0),
+                                                   heightDimension: .absolute(32))
+            
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: columns)
+            
+            group.interItemSpacing = .fixed(spacing)
+
+            let section = NSCollectionLayoutSection(group: group)
+            
+            section.interGroupSpacing = spacing
+            section.contentInsets     = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+
+            return section
+        }
+        return layout
+    }
+
+    func configureHierarchy()
+    {
+        view.backgroundColor = .systemBackground
+    
+        let layout = createLayout()
+        
+        let collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: layout)
+        
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        searchBar.translatesAutoresizingMaskIntoConstraints      = false
+        
+        collectionView.backgroundColor  = .systemBackground
+        collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        view.addSubview(collectionView)
+        view.addSubview(searchBar)
+
+        let views = ["cv": collectionView, "searchBar": searchBar]
+        var constraints = [NSLayoutConstraint]()
+        
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(
+            withVisualFormat: "H:|[cv]|", options: [], metrics: nil, views: views)
+        )
+        
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(
+            withVisualFormat: "H:|[searchBar]|", options: [], metrics: nil, views: views)
+        )
+        
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(
+            withVisualFormat: "V:[searchBar]-20-[cv]|", options: [], metrics: nil, views: views)
+        )
+        
+        constraints.append(searchBar.topAnchor.constraint(
+            equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 1.0)
+        )
+        
+        NSLayoutConstraint.activate(constraints)
+        photosCollectionView = collectionView
+
+        searchBar.delegate = self
+    }
+}
+
+extension MainViewController: UISearchBarDelegate
+{
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)
+    {
+        performQuery(with: searchText)
     }
 }

@@ -5,6 +5,7 @@
 //  Created by Cameron de Bruyn on 2021/07/31.
 //
 
+import UIKit
 import Foundation
 import Combine
 
@@ -29,7 +30,12 @@ class PhotosController: ObservableObject
     @Published
     private(set) var flickrImage: Data = Data()
     
+    @Published
+    private(set) var photos: [Photo] = []
+    
     private var bag = Set<AnyCancellable>()
+    
+    weak var delegate: MainViewDelegate?
     
     struct Photo: Hashable
     {
@@ -61,15 +67,22 @@ class PhotosController: ObservableObject
     
     func searchPhotos(with tag: String, page: Int)
     {
-        try? networkPhotos?.searchFlickr(tags: tag, page: page)
+        try? networkPhotos.searchFlickr(tags: tag, page: page)
             .replaceError(with: FlickrPhotos(photos: nil, stat: "NO SUCCESS"))
-            .assign(to: \.flickrPhotos, on: self)
+            .sink(receiveValue:
+            {
+                [weak self] result in guard let this = self else { return }
+                
+                this.generatePhotos(result: result)
+                
+                this.delegate?.photosGenerated()
+            })
             .store(in: &bag)
     }
     
     private func searchSizes(with id: String)
     {
-        try? networkSizes?.getSizes(photoId: id)
+        try? networkSizes.getSizes(photoId: id)
             .replaceError(with: FlickrSizes(sizes: nil, stat: "NO SUCCESS"))
             .assign(to: \.flickrSizes, on: self)
             .store(in: &bag)
@@ -77,24 +90,20 @@ class PhotosController: ObservableObject
     
     private func fetchImage(from url: URL)
     {
-        networkImage?.getData(from: url)
+        networkImage.getData(from: url)
             .replaceError(with: Data())
             .assign(to: \.flickrImage, on: self)
             .store(in: &bag)
     }
-    
-    private lazy var photos: [Photo] = {
-        return generatePhotos()
-    }()
 }
 
 extension PhotosController
 {
-    private func generatePhotos() -> [Photo]
+    private func generatePhotos(result: FlickrPhotos)
     {
-        var photos = [Photo]()
+        var _photos = [Photo]()
      
-        for searchResult in (flickrPhotos?.photos?.photo ?? [])
+        for searchResult in (result.photos?.photo ?? [])
         {
             guard let _id = searchResult.id else { continue }
             
@@ -113,11 +122,11 @@ extension PhotosController
                         flickrSize:   size
                     )
     
-                    photos.append(photo)
+                    _photos.append(photo)
                 }
             }
         }
         
-        return photos
+        photos = _photos
     }
 }
