@@ -64,7 +64,10 @@ class PhotosController: ObservableObject
             {
                 [weak self] result in guard let this = self else { return }
                 
-                this.generatePhotos(result: result)
+                DispatchQueue.main.async
+                {
+                    this.generatePhotos(result: result)
+                }
             })
             .store(in: &bag)
     }
@@ -102,7 +105,10 @@ extension PhotosController
 {
     private func generatePhotos(result: FlickrPhotos)
     {
-        photos = [Photo]()
+        DispatchQueue.global(qos: .background).async
+        {
+            self.photos.removeAll()
+        }
         
         for searchResult in (result.photos?.photo ?? []).prefix(5)
         {
@@ -134,7 +140,10 @@ extension PhotosController
         
         if !photos.contains(photo)
         {
-            photos.append(photo)
+            DispatchQueue.global(qos: .background).async
+            {
+                self.photos.append(photo)
+            }
         }
     }
 }

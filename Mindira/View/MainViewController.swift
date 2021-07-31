@@ -23,8 +23,10 @@ class MainViewController: UIViewController
     
     // MARK: Stored Properties
     
-    var nameFilter: String?
+    @Published var nameFilter: String = ""
 
+    var bag = Set<AnyCancellable>()
+    
     let photosController = PhotosController()
     
     // MARK: Lazy View Properties
@@ -53,7 +55,7 @@ class MainViewController: UIViewController
         
         configureHierarchy()
         configureDataSource()
-        performQuery(with: nil)
+        watchTextField()
     }
 }
 
@@ -82,9 +84,17 @@ extension MainViewController
     
     /// - Tag: PhotosPerformQuery
     
-    func performQuery(with filter: String?)
+    func watchTextField()
     {
-        photosController.searchPhotos(with: "kittens", page: 1)
+        $nameFilter
+            .debounce(for: .milliseconds(100), scheduler: DispatchQueue.main)
+            .sink
+            {
+                [weak self] value in guard let this = self else { return }
+                
+                this.photosController.searchPhotos(with: value, page: 1)
+            }
+            .store(in: &bag)
     }
 }
 
@@ -186,6 +196,6 @@ extension MainViewController: UISearchBarDelegate
 {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)
     {
-        performQuery(with: searchText)
+        nameFilter = searchText
     }
 }
