@@ -60,6 +60,8 @@ class PhotosController: ObservableObject
     {
         try? networkPhotos.searchFlickr(tags: tag, page: page)
             .replaceError(with: FlickrPhotos(photos: nil, stat: "NO SUCCESS"))
+            .subscribe(on: DispatchQueue.global(qos: .background))
+            .receive(on: DispatchQueue.global(qos: .background), options: .none)
             .sink(receiveValue:
             {
                 [weak self] result in guard let this = self else { return }
@@ -76,6 +78,8 @@ class PhotosController: ObservableObject
     {
         try? networkSizes.getSizes(photoId: id)
             .replaceError(with: FlickrSizes(sizes: nil, stat: "NO SUCCESS"))
+            .subscribe(on: DispatchQueue.global(qos: .background))
+            .receive(on: DispatchQueue.global(qos: .background), options: .none)
             .sink(receiveValue:
             {
                 [weak self] sizes in guard let this = self else { return }
@@ -89,6 +93,8 @@ class PhotosController: ObservableObject
     {
         networkImage.getData(from: url)
             .replaceError(with: Data())
+            .subscribe(on: DispatchQueue.global(qos: .background))
+            .receive(on: DispatchQueue.global(qos: .background), options: .none)
             .sink(receiveValue:
             {
                 [weak self] image in guard let this = self else { return }
@@ -97,7 +103,7 @@ class PhotosController: ObservableObject
                 
                 this.delegate?.photosGenerated()
             })
-            .store(in: &bag)
+            .cancel()
     }
 }
 
@@ -113,6 +119,8 @@ extension PhotosController
         FlickrPhotosStorage
             .savePhotos(searchResults: result.photos?.photo ?? [])
             .replaceError(with: ())
+            .subscribe(on: DispatchQueue.global(qos: .background))
+            .receive(on: DispatchQueue.global(qos: .background), options: .none)
             .sink { _ in }
             .cancel()
         
@@ -131,6 +139,8 @@ extension PhotosController
             FlickrSizeStorage
                 .saveSizes(for: photoId, sizes: flickrSizes.sizes?.size ?? [])
                 .replaceError(with: ())
+                .subscribe(on: DispatchQueue.global(qos: .background))
+                .receive(on: DispatchQueue.global(qos: .background), options: .none)
                 .sink { _ in }
                 .cancel()
         }

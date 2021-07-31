@@ -48,10 +48,15 @@ class MainViewController: UIViewController
     
     // MARK: View Lifecycle
     
-    override func viewDidLoad()
+    override func viewWillAppear(_ animated: Bool)
     {
-        super.viewDidLoad()
+        configureNetworkMonitor()
+        
+        super.viewWillAppear(animated)
+    }
     
+    override func viewDidLoad()
+    {    
         navigationItem.title = "Flickr Photo Search"
         
         photosController.delegate = self
@@ -59,6 +64,8 @@ class MainViewController: UIViewController
         configureHierarchy()
         configureDataSource()
         watchTextField()
+
+        super.viewDidLoad()
     }
 }
 

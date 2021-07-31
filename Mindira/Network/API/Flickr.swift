@@ -16,7 +16,7 @@ extension NetworkCenter
     {
         print("INFO: Search Flickr with Tags and page.")
         
-        if !(CacheManager.isRemote.single ?? false)
+        if CacheManager.isRemote.single ?? false
         {
             return FlickrPhotosStorage.fetchPhotos()
         }
@@ -39,7 +39,7 @@ extension NetworkCenter
     {
         print("INFO: Get Sizes/URLs for a single image.")
         
-        if !(CacheManager.isRemote.single ?? false)
+        if CacheManager.isRemote.single ?? false
         {
             return FlickrSizeStorage.fetchSizes(for: photoId)
         }
