@@ -7,12 +7,11 @@
 
 import UIKit
 
-class MainViewController: UIViewController
+class MainViewController: UICollectionViewController
 {
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
     }
 }
 

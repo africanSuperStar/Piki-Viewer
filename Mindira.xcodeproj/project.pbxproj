@@ -3,11 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A542331826B5158000DD003A /* PinLayout in Frameworks */ = {isa = PBXBuildFile; productRef = A542331726B5158000DD003A /* PinLayout */; };
+		A542332126B52B7700DD003A /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542332026B52B7700DD003A /* Network.swift */; };
+		A542332426B5460800DD003A /* INetworkCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542332326B5460800DD003A /* INetworkCenter.swift */; };
+		A542332626B547E600DD003A /* NetworkCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542332526B547E600DD003A /* NetworkCenter.swift */; };
+		A542332926B5481800DD003A /* AnyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542332826B5481800DD003A /* AnyModel.swift */; };
+		A542332B26B54A7800DD003A /* NetworkCenter+Headers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542332A26B54A7800DD003A /* NetworkCenter+Headers.swift */; };
+		A542332D26B54B2100DD003A /* NetworkCenter+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542332C26B54B2100DD003A /* NetworkCenter+URL.swift */; };
+		A542333026B54B9100DD003A /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542332F26B54B9100DD003A /* Cache.swift */; };
+		A542333226B54CC400DD003A /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542333126B54CC400DD003A /* CacheManager.swift */; };
 		A5D88E9E26B48C310016CC8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88E9D26B48C310016CC8F /* AppDelegate.swift */; };
 		A5D88EA226B48C310016CC8F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88EA126B48C310016CC8F /* ViewController.swift */; };
 		A5D88EA726B48C310016CC8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5D88EA626B48C310016CC8F /* Assets.xcassets */; };
@@ -34,6 +41,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A542332026B52B7700DD003A /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		A542332326B5460800DD003A /* INetworkCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INetworkCenter.swift; sourceTree = "<group>"; };
+		A542332526B547E600DD003A /* NetworkCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCenter.swift; sourceTree = "<group>"; };
+		A542332826B5481800DD003A /* AnyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyModel.swift; sourceTree = "<group>"; };
+		A542332A26B54A7800DD003A /* NetworkCenter+Headers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkCenter+Headers.swift"; sourceTree = "<group>"; };
+		A542332C26B54B2100DD003A /* NetworkCenter+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkCenter+URL.swift"; sourceTree = "<group>"; };
+		A542332F26B54B9100DD003A /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		A542333126B54CC400DD003A /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		A5D88E9A26B48C310016CC8F /* Mindira.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mindira.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5D88E9D26B48C310016CC8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5D88EA126B48C310016CC8F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -53,7 +68,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A542331826B5158000DD003A /* PinLayout in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +88,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A542331E26B52B6200DD003A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A542332E26B54B8100DD003A /* Cache */,
+				A542332226B545F600DD003A /* NetworkCenter */,
+				A542332026B52B7700DD003A /* Network.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		A542331F26B52B6900DD003A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A542332226B545F600DD003A /* NetworkCenter */ = {
+			isa = PBXGroup;
+			children = (
+				A542332326B5460800DD003A /* INetworkCenter.swift */,
+				A542332526B547E600DD003A /* NetworkCenter.swift */,
+				A542332A26B54A7800DD003A /* NetworkCenter+Headers.swift */,
+				A542332C26B54B2100DD003A /* NetworkCenter+URL.swift */,
+			);
+			path = NetworkCenter;
+			sourceTree = "<group>";
+		};
+		A542332726B5480A00DD003A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A542332826B5481800DD003A /* AnyModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A542332E26B54B8100DD003A /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				A542332F26B54B9100DD003A /* Cache.swift */,
+				A542333126B54CC400DD003A /* CacheManager.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
 		A5D88E9126B48C310016CC8F = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +156,9 @@
 		A5D88E9C26B48C310016CC8F /* Mindira */ = {
 			isa = PBXGroup;
 			children = (
+				A542332726B5480A00DD003A /* Model */,
+				A542331F26B52B6900DD003A /* View */,
+				A542331E26B52B6200DD003A /* Network */,
 				A5D88E9D26B48C310016CC8F /* AppDelegate.swift */,
 				A5D88EA126B48C310016CC8F /* ViewController.swift */,
 				A5D88EA626B48C310016CC8F /* Assets.xcassets */,
@@ -141,7 +203,6 @@
 			);
 			name = Mindira;
 			packageProductDependencies = (
-				A542331726B5158000DD003A /* PinLayout */,
 			);
 			productName = Mindira;
 			productReference = A5D88E9A26B48C310016CC8F /* Mindira.app */;
@@ -215,7 +276,6 @@
 			);
 			mainGroup = A5D88E9126B48C310016CC8F;
 			packageReferences = (
-				A542331626B5158000DD003A /* XCRemoteSwiftPackageReference "PinLayout" */,
 			);
 			productRefGroup = A5D88E9B26B48C310016CC8F /* Products */;
 			projectDirPath = "";
@@ -259,8 +319,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A542332126B52B7700DD003A /* Network.swift in Sources */,
+				A542333026B54B9100DD003A /* Cache.swift in Sources */,
 				A5D88EA226B48C310016CC8F /* ViewController.swift in Sources */,
+				A542332926B5481800DD003A /* AnyModel.swift in Sources */,
+				A542332B26B54A7800DD003A /* NetworkCenter+Headers.swift in Sources */,
+				A542332D26B54B2100DD003A /* NetworkCenter+URL.swift in Sources */,
+				A542333226B54CC400DD003A /* CacheManager.swift in Sources */,
 				A5D88E9E26B48C310016CC8F /* AppDelegate.swift in Sources */,
+				A542332626B547E600DD003A /* NetworkCenter.swift in Sources */,
+				A542332426B5460800DD003A /* INetworkCenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,25 +653,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		A542331626B5158000DD003A /* XCRemoteSwiftPackageReference "PinLayout" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/layoutBox/PinLayout.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.10.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		A542331726B5158000DD003A /* PinLayout */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A542331626B5158000DD003A /* XCRemoteSwiftPackageReference "PinLayout" */;
-			productName = PinLayout;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A5D88E9226B48C310016CC8F /* Project object */;
 }
