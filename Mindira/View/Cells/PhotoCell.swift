@@ -34,6 +34,7 @@ extension PhotoCell
         imageView.translatesAutoresizingMaskIntoConstraints = false
         label.translatesAutoresizingMaskIntoConstraints     = false
     
+        
         contentView.addSubview(imageView)
         contentView.addSubview(label)
         
@@ -42,23 +43,28 @@ extension PhotoCell
         label.font = UIFont.preferredFont(forTextStyle: .body)
         label.adjustsFontForContentSizeCategory = true
         
-        layer.borderWidth = 1
-        layer.borderColor = UIColor.systemGray2.cgColor
+        layer.shouldRasterize = true
+        layer.shadowPath = UIBezierPath(rect: bounds).cgPath
         
-        let height = CGFloat(50)
+        layer.shadowColor   = UIColor.lightGray.cgColor
+        layer.shadowOpacity = 0.5
+        layer.shadowOffset  = .zero
+        layer.shadowRadius  = 20
+        
+        layer.cornerRadius    = 20
+        layer.backgroundColor = UIColor.white.cgColor
+        
         let inset = CGFloat(10)
         
         NSLayoutConstraint.activate([
             imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: inset),
             imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -inset),
-            imageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            imageView.heightAnchor.constraint(equalToConstant: height),
-            
-            contentView.heightAnchor.constraint(equalToConstant: height),
+            imageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            imageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: inset),
             
             label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: inset),
             label.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -inset),
-            label.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
+            label.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -inset)
         ])
     }
 }

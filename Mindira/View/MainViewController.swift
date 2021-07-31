@@ -123,7 +123,7 @@ extension MainViewController
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
             
             let groupSize = NSCollectionLayoutSize(widthDimension:  .fractionalWidth(1.0),
-                                                   heightDimension: .absolute(32))
+                                                   heightDimension: .absolute(200))
             
             let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: columns)
             
