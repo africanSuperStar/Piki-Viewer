@@ -14,7 +14,16 @@ extension NetworkCenter
     {
         get
         {
-            guard let url = url else { return nil }
+            var components = URLComponents()
+        
+            components.scheme     = scheme
+            components.host       = host
+            components.path       = path ?? ""
+            components.percentEncodedQueryItems = urlQueryItems
+            
+            guard let url = components.url?.absoluteURL else { return nil }
+            
+            print("ABS. URL: \(components.url?.absoluteString ?? "")")
             
             var request = URLRequest(url: url)
             

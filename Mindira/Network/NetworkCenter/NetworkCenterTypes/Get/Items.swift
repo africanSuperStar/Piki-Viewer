@@ -15,7 +15,6 @@ extension NetworkCenter
     @discardableResult
     internal func getItems <T: _T.Role> (
         _ host:      String,
-        _ port:      String,
         path:        String,
         with params: [String: Any]?,
         headers:     [String: String]?,

@@ -30,7 +30,7 @@ final class Cache <Key: Hashable, Value>
     
     func insert(_ value: Value, forKey key: CacheKeys)
     {
-        guard let key = key as? Key
+        guard let key = key.rawIdentifier as? Key
             else
         {
             return
@@ -46,7 +46,7 @@ final class Cache <Key: Hashable, Value>
     
     func value(forKey key: CacheKeys) -> Value?
     {
-        guard let _key = key as? Key, let entry = wrapped.object(forKey: WrappedKey(_key))
+        guard let _key = key.rawIdentifier as? Key, let entry = wrapped.object(forKey: WrappedKey(_key))
             else
         {
             return nil
@@ -72,7 +72,7 @@ final class Cache <Key: Hashable, Value>
     
     func removeValue(forKey key: CacheKeys)
     {
-        guard let key = key as? Key
+        guard let key = key.rawIdentifier as? Key
             else
         {
             return

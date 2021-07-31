@@ -42,22 +42,16 @@ class NetworkCenter <T: AnyModel> : NSObject, INetworkCenter, URLSessionDelegate
         self.secureStore = SecureStore(secureStoreQueryable: GenericPasswordQueryable(service: "MinderaService"))
         
         self._key = key
-        
+
         super.init()
         
+        self.scheme      = "https"
+        self.host        = "api.flickr.com"
+        self.accessToken = "f9cc014fa76b098f9e82f1c288379ea1"
+                
         self.session = URLSession(configuration: configuration,
                                   delegate: self,
                                   delegateQueue: nil
         )
-    }
-    
-    // MARK: - Authentication Challenge
-    
-    public func urlSession(
-        _ session:            URLSession,
-        didReceive challenge: URLAuthenticationChallenge,
-        completionHandler:    @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void)
-    {
-        completionHandler(.performDefaultHandling, nil)
     }
 }

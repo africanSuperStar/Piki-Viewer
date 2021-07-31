@@ -20,8 +20,6 @@ class MainViewController: UIViewController
     {
         super.viewDidLoad()
         
-        network?.accessToken = "f9cc014fa76b098f9e82f1c288379ea1"
-        
         try? network?.searchFlickr(tags: "kitten", page: 1)
             .replaceError(with: [FlickrSearchResult]())
             .sink(receiveValue:

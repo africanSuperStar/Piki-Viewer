@@ -42,38 +42,6 @@ extension NetworkCenter
 
 extension NetworkCenter
 {
-    var port: String?
-    {
-        get
-        {
-            guard let port = CacheManager.port.value(forKey: .port(_key))
-            else
-            {
-                print("CRITICAL: Failed to fetch port from Cache Manager.")
-                
-                return nil
-            }
-            
-            return port
-        }
-        
-        set
-        {
-            guard let _port = newValue
-            else
-            {
-                print("CRITICAL: Failed to set port in Cache Manager.")
-                
-                return
-            }
-            
-            CacheManager.port.insert(_port, forKey: .port(_key))
-        }
-    }
-}
-
-extension NetworkCenter
-{
     var scheme: String?
     {
         get
@@ -142,28 +110,15 @@ extension NetworkCenter
     {
         get
         {
-            guard let urlQueryItems = CacheManager.urlQueryItems.value(forKey: .queryItems(_key))
+            guard let urlQueryItems = CacheManager.urlQueryItems.value(forKey: .urlQueryItems(_key))
             else
             {
-                print("CRITICAL: Failed to fetch query items from Data Cache Manager")
+                print("CRITICAL: Failed to fetch URL query items from Data Cache Manager")
                 
-                return nil
+                return []
             }
             
             return urlQueryItems
-        }
-        
-        set
-        {
-            guard let _urlQueryItems = newValue
-            else
-            {
-                print("CRITICAL: Failed to set URLQueryItems in Cache Manager.")
-                
-                return
-            }
-            
-            CacheManager.urlQueryItems.insert(_urlQueryItems, forKey: .path(_key))
         }
     }
     
@@ -184,6 +139,8 @@ extension NetworkCenter
         
         set
         {
+            CacheManager.queryItems.insert(newValue ?? [:], forKey: .queryItems(_key))
+            
             let _urlQueryItems = newValue?.compactMap
             {
                 (key, value) -> URLQueryItem? in
@@ -196,65 +153,8 @@ extension NetworkCenter
                 
                 return URLQueryItem(name: key, value: urlEncodedString)
             }
-            
-            urlQueryItems = _urlQueryItems
-        }
-    }
-}
 
-extension NetworkCenter
-{
-    var components: URLComponents?
-    {
-        get
-        {
-            var components = URLComponents()
-            
-            if let port = Int(port ?? "")
-            {
-                components.port = port
-            }
-        
-            components.scheme     = scheme
-            components.host       = host
-            components.path       = path ?? ""
-            components.percentEncodedQueryItems = urlQueryItems ?? []
-            
-            CacheManager.components.update(components, forKey: .components(_key))
-            
-            return components
-        }
-        
-        set
-        {
-            guard let _components = newValue
-            else
-            {
-                print("CRITICAL: Failed to set components in Cache Manager.")
-                
-                return
-            }
-            
-            CacheManager.components.insert(_components, forKey: .path(_key))
-        }
-    }
-}
-
-extension NetworkCenter
-{
-    var url: URL?
-    {
-        get
-        {
-            guard let components = CacheManager.components.value(forKey: .components(_key))
-            else
-            {
-                print("CRITICAL: Failed to fetch URL Components from Data Cache Manager")
-                
-                return nil
-            }
-            
-            return components.url?.absoluteURL
+            CacheManager.urlQueryItems.insert(_urlQueryItems ?? [], forKey: .urlQueryItems(_key))
         }
     }
 }

@@ -16,10 +16,10 @@ extension NetworkCenter
         print("INFO: Search Flickr with Tags and page.")
         
         return callItems(
-            "api.flickr.com/services/rest/",
+            "/services/rest/",
             with: [
                 "method": "flickr.photos.search",
-                "api_key": CacheManager.accessToken.single ?? "",
+                "api_key": accessToken ?? "",
                 "tags": tags,
                 "page": "\(page)",
                 "format": "json",

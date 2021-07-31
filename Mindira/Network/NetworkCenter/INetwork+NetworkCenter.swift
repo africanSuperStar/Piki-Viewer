@@ -13,7 +13,7 @@ extension NetworkCenter
 {
     var headers: [String : String]
     {
-        if let accessToken = CacheManager.accessToken.single
+        if let accessToken = accessToken
         {
             return [
                 "Authorization": "Bearer \(accessToken)"
@@ -31,11 +31,10 @@ extension NetworkCenter
 extension NetworkCenter
 {
     fileprivate func callee <T> (
-        path:    String,
-        params:  [String: Any]? = nil,
-        retries: Int = 0,
+        _path:    String,
+        _params:  [String: String]? = nil,
+        retries:  Int = 0,
         _ handler: @escaping (
-            String,
             String,
             String,
             [String : Any]?,
@@ -48,8 +47,10 @@ extension NetworkCenter
     {
         if CacheManager.isRemote.single ?? true
         {
-            return handler(host ?? "", port ?? "", path, params, headers, retries)
-                
+            path       = _path
+            queryItems = _params
+            
+            return handler(host ?? "", _path, _params, headers, retries)                
         }
         else
         {
@@ -74,6 +75,6 @@ extension NetworkCenter
     )
     -> AnyPublisher <[T], Error>
     {
-        callee(path: path, params: params, getItems)
+        callee(_path: path, _params: params, getItems)
     }
 }
