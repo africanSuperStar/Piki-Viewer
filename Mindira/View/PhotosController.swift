@@ -22,15 +22,6 @@ class PhotosController: ObservableObject
     var networkImage
     
     @Published
-    private(set) var flickrPhotos: FlickrPhotos?
-    
-    @Published
-    private(set) var flickrSizes: FlickrSizes?
-    
-    @Published
-    private(set) var flickrImage: Data = Data()
-    
-    @Published
     private(set) var photos: [Photo] = []
     
     private var bag = Set<AnyCancellable>()
@@ -74,25 +65,35 @@ class PhotosController: ObservableObject
                 [weak self] result in guard let this = self else { return }
                 
                 this.generatePhotos(result: result)
-                
-                this.delegate?.photosGenerated()
             })
             .store(in: &bag)
     }
     
-    private func searchSizes(with id: String)
+    private func searchSizes(with id: String, result: FlickrSearchResult)
     {
         try? networkSizes.getSizes(photoId: id)
             .replaceError(with: FlickrSizes(sizes: nil, stat: "NO SUCCESS"))
-            .assign(to: \.flickrSizes, on: self)
+            .sink(receiveValue:
+            {
+                [weak self] sizes in guard let this = self else { return }
+                
+                this.sortSizes(flickrSizes: sizes, searchResult: result)
+            })
             .store(in: &bag)
     }
     
-    private func fetchImage(from url: URL)
+    private func fetchImage(from url: URL, searchResult: FlickrSearchResult, flickrSizeResult: FlickrSizeResult)
     {
         networkImage.getData(from: url)
             .replaceError(with: Data())
-            .assign(to: \.flickrImage, on: self)
+            .sink(receiveValue:
+            {
+                [weak self] image in guard let this = self else { return }
+                
+                this.applyImage(image, searchResult: searchResult, flickrSizeResult: flickrSizeResult)
+                
+                this.delegate?.photosGenerated()
+            })
             .store(in: &bag)
     }
 }
@@ -101,32 +102,39 @@ extension PhotosController
 {
     private func generatePhotos(result: FlickrPhotos)
     {
-        var _photos = [Photo]()
-     
+        photos = [Photo]()
+        
         for searchResult in (result.photos?.photo ?? []).prefix(5)
         {
             guard let _id = searchResult.id else { continue }
             
-            searchSizes(with: _id)
-     
-            if let size = flickrSizes?.sizes?.size?.filter({ $0.label == "Large Square" }).first
-            {
-                if let source = size.source,
-                   let url    = URL(string: source)
-                {
-                    fetchImage(from: url)
-                    
-                    let photo = Photo(
-                        imageData:    flickrImage,
-                        flickrSearch: searchResult,
-                        flickrSize:   size
-                    )
+            searchSizes(with: _id, result: searchResult)
+        }
+    }
     
-                    _photos.append(photo)
-                }
+    private func sortSizes(flickrSizes: FlickrSizes, searchResult: FlickrSearchResult)
+    {
+        if let size = flickrSizes.sizes?.size?.filter({ $0.label == "Large Square" }).first
+        {
+            if let source = size.source,
+               let url    = URL(string: source)
+            {
+                fetchImage(from: url, searchResult: searchResult, flickrSizeResult: size)
             }
         }
+    }
+    
+    private func applyImage(_ image: Data, searchResult: FlickrSearchResult, flickrSizeResult: FlickrSizeResult)
+    {
+        let photo = Photo(
+            imageData: image,
+            flickrSearch: searchResult,
+            flickrSize: flickrSizeResult
+        )
         
-        photos = _photos
+        if !photos.contains(photo)
+        {
+            photos.append(photo)
+        }
     }
 }
