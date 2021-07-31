@@ -28,5 +28,5 @@ protocol INetworkCenter
         with params: [String : Any]?,
         headers:     [String : String]?,
         retries:     Int
-    ) -> AnyPublisher <Result <[T], Error>, Never>
+    ) -> AnyPublisher <[T], Error>
 }

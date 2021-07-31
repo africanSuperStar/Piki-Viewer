@@ -19,26 +19,25 @@ extension NetworkCenter
         path:        String,
         with params: [String: Any]?,
         headers:     [String: String]?,
-        retries:     Int
+        retries:     Int = 1
     )
-    -> AnyPublisher <Result <[T], Error>, Never>
+    -> AnyPublisher <[T], Error>
     {
         guard let request = get
             else
         {
-            return Just(.failure(NetworkCenterError.failedToBuildRequest)).eraseToAnyPublisher()
+            return Fail(
+                outputType: [T].self,
+                failure: NetworkCenterError.failedToBuildRequest
+            )
+            .eraseToAnyPublisher()
         }
         
         return session.dataTaskPublisher(for: request)
-            .tryMap
-            {
-                [unowned self] (data, response) -> Result <[T], Error> in
-                
-                try decodeItems(data, with: response)
-            }
+            .map { $0.data }
+            .decode(type: [T].self, decoder: JSONDecoder())
             .receive(on: scheduler)
             .retry(retries)
-            .replaceError(with: .failure(NetworkCenterError.failedToRetrieveValue))
             .eraseToAnyPublisher()
     }
 }

@@ -15,7 +15,7 @@ protocol AnyModel : Codable, Identifiable where ID == String
 
 extension AnyModel
 {
-    var id: String?
+    var id: String
     {
         return UUID().uuidString
     }

@@ -42,19 +42,24 @@ extension NetworkCenter
             [String : String]?,
             Int
         )
-        -> AnyPublisher <Result <[T], Error>, Never>
+        -> AnyPublisher <[T], Error>
     )
-    -> AnyPublisher <Result <[T], Error>, Never>
+    -> AnyPublisher <[T], Error>
     {
         if CacheManager.isRemote.single ?? true
         {
             return handler(host ?? "", port ?? "", path, params, headers, retries)
+                
         }
         else
         {
             // TODO: Get Data Locally
             
-            return Just(.failure(NetworkCenterError.failedToConnectToServer)).eraseToAnyPublisher()
+            return Fail(
+                outputType: [T].self,
+                failure: NetworkCenterError.failedToRetrieveValue
+            )
+            .eraseToAnyPublisher()
         }
     }
     
@@ -67,7 +72,7 @@ extension NetworkCenter
         _ path:      String,
         with params: [String : String]? = nil
     )
-    -> AnyPublisher <Result <[T], Error>, Never>
+    -> AnyPublisher <[T], Error>
     {
         callee(path: path, params: params, getItems)
     }
