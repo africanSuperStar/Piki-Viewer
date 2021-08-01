@@ -14,7 +14,7 @@ class MockNetworkCenter <T: AnyModel> : NetworkCenter<T>
 {
     typealias _T = T
     
-    let mockSession: Session
+    var mockSession: Session
     
     // MARK: - Initializers
     

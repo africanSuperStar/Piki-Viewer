@@ -35,7 +35,7 @@ final class SessionDataTask : URLSessionDataTask
         headersToCheck: [String] = [],
         completion:     (Completion)? = nil)
     {
-        self.init(session: session, request: request)
+        self.init()
         
         self.session        = session
         self.request        = request

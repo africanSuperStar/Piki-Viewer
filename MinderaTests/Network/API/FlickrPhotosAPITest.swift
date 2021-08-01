@@ -60,20 +60,35 @@ class FlickrAPITest: XCTestCase
         XCTAssertEqual(url?.pathComponents, mockURL?.pathComponents)
     }
     
-//    func testDataTask() {
-//        let request = URLRequest(url: URL(string: "http://example.com")!)
-//        let dataTask = session.dataTask(with: request)
+    func test_FlickrPhotos_DataTask()
+    {
+        let url      = URL(string: "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=f9cc014fa76b098f9e82f1c288379ea1&tags=kitten&page=1&format=json&nojsoncallback=1")
+        let dataTask = networkPhotos.mockSession.dataTask(with: url!)
+
+        XCTAssert(dataTask is SessionDataTask)
+
+        if let dataTask = dataTask as? SessionDataTask
+        {
+            XCTAssertEqual(dataTask.request?.url?.absoluteString, url?.absoluteString)
+        }
+    }
+    
+    func testPlayback()
+    {
+        networkPhotos.mockSession.recordingEnabled = false
+        
+        let expectation = self.expectation(description: "Flickr Photos")
+
+//        networkPhotos.mockSession.dataTask(with: request, completionHandler: { data, response, error in
+//            XCTAssertEqual("hello", String(data: data!, encoding: String.Encoding.utf8))
 //
-//        XCTAssert(dataTask is SessionDataTask)
+//            let httpResponse = response as! Foundation.HTTPURLResponse
+//            XCTAssertEqual(200, httpResponse.statusCode)
 //
-//        if let dataTask = dataTask as? SessionDataTask, let headers = dataTask.request.allHTTPHeaderFields {
-//            XCTAssert(headers["testSessionHeader"] == "testSessionHeaderValue")
-//        } else {
-//            XCTFail()
-//        }
-//
-//        XCTAssertEqual(dataTask.currentRequest?.url?.absoluteString, request.url?.absoluteString)
-//    }
-//    }
+//            expectation.fulfill()
+//        }) .resume()
+
+        waitForExpectations(timeout: 1, handler: nil)
+    }
 
 }
