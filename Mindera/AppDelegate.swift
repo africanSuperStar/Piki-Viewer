@@ -7,7 +7,6 @@
 
 import UIKit
 import CoreData
-import Mixpanel
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate
@@ -22,8 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate
     )
     -> Bool
     {
-        Mixpanel.initialize(token: "73e8a85e493cf65dfccd39b30c5ed019")
-        
         persistence.saveContext()
         
         window = UIWindow(frame: UIScreen.main.bounds)

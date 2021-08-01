@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -44,7 +44,6 @@
 		A542337A26B6106600DD003A /* FlickrImageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542337926B6106600DD003A /* FlickrImageObject.swift */; };
 		A542337C26B610E800DD003A /* FlickrImageStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542337B26B610E800DD003A /* FlickrImageStorage.swift */; };
 		A542338026B64C8D00DD003A /* MainViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542337F26B64C8D00DD003A /* MainViewControllerTest.swift */; };
-		A542338326B66FA000DD003A /* Mixpanel in Frameworks */ = {isa = PBXBuildFile; productRef = A542338226B66FA000DD003A /* Mixpanel */; };
 		A542338626B671BD00DD003A /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542338526B671BD00DD003A /* Session.swift */; };
 		A542338826B6739000DD003A /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542338726B6739000DD003A /* URLRequest.swift */; };
 		A542338A26B673F300DD003A /* Interaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542338926B673F300DD003A /* Interaction.swift */; };
@@ -146,7 +145,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A542338326B66FA000DD003A /* Mixpanel in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,7 +407,6 @@
 			);
 			name = Mindera;
 			packageProductDependencies = (
-				A542338226B66FA000DD003A /* Mixpanel */,
 			);
 			productName = Mindira;
 			productReference = A5D88E9A26B48C310016CC8F /* Mindera.app */;
@@ -484,7 +481,6 @@
 			);
 			mainGroup = A5D88E9126B48C310016CC8F;
 			packageReferences = (
-				A542338126B66FA000DD003A /* XCRemoteSwiftPackageReference "mixpanel-swift" */,
 			);
 			productRefGroup = A5D88E9B26B48C310016CC8F /* Products */;
 			projectDirPath = "";
@@ -907,25 +903,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		A542338126B66FA000DD003A /* XCRemoteSwiftPackageReference "mixpanel-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/mixpanel/mixpanel-swift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.10.2;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		A542338226B66FA000DD003A /* Mixpanel */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A542338126B66FA000DD003A /* XCRemoteSwiftPackageReference "mixpanel-swift" */;
-			productName = Mixpanel;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		A542336726B5E9FD00DD003A /* Mindera.xcdatamodeld */ = {
