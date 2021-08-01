@@ -9,6 +9,16 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>MinderaTests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>MinderaUITests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>Mindira.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -34,6 +44,24 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>A5D88E9926B48C310016CC8F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A5D88EAF26B48C310016CC8F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A5D88EBA26B48C310016CC8F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

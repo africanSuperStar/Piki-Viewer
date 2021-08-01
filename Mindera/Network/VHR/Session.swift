@@ -45,7 +45,7 @@ open class Session : URLSession
         outputDirectory: String = "$HOME/Desktop/DVR/",
         cassetteName:    String,
         testBundle:      Bundle = Session.defaultTestBundle!,
-        backingSession:  URLSession = URLSession.shared,
+        backingSession:  URLSession,
         headersToCheck:  [String] = []
     ) {
         self.outputDirectory = outputDirectory
@@ -59,12 +59,6 @@ open class Session : URLSession
         configuration.waitsForConnectivity       = true
         configuration.timeoutIntervalForRequest  = 15
         configuration.timeoutIntervalForResource = 15
-        
-        super.init(
-            configuration: configuration,
-            delegate:      backingSession.delegate,
-            delegateQueue: OperationQueue.current
-        )
     }
 
     // MARK: - URLSession

@@ -52,7 +52,9 @@
 		A542338E26B674ED00DD003A /* URLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542338D26B674ED00DD003A /* URLResponse.swift */; };
 		A542339026B6756C00DD003A /* SessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542338F26B6756C00DD003A /* SessionDataTask.swift */; };
 		A542339226B67F3900DD003A /* Cassette.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542339126B67F3900DD003A /* Cassette.swift */; };
-		A542339626B6860900DD003A /* FlickrAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542339526B6860900DD003A /* FlickrAPITest.swift */; };
+		A542339626B6860900DD003A /* FlickrPhotosAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542339526B6860900DD003A /* FlickrPhotosAPITest.swift */; };
+		A542339826B689A200DD003A /* MockNetworkCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542339726B689A200DD003A /* MockNetworkCenter.swift */; };
+		A542339A26B68A2A00DD003A /* MockNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542339926B68A2A00DD003A /* MockNetwork.swift */; };
 		A5D88E9E26B48C310016CC8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88E9D26B48C310016CC8F /* AppDelegate.swift */; };
 		A5D88EA226B48C310016CC8F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88EA126B48C310016CC8F /* MainViewController.swift */; };
 		A5D88EA726B48C310016CC8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5D88EA626B48C310016CC8F /* Assets.xcassets */; };
@@ -114,7 +116,7 @@
 		A542337726B607C500DD003A /* FlickrSizeStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrSizeStorage.swift; sourceTree = "<group>"; };
 		A542337926B6106600DD003A /* FlickrImageObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrImageObject.swift; sourceTree = "<group>"; };
 		A542337B26B610E800DD003A /* FlickrImageStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrImageStorage.swift; sourceTree = "<group>"; };
-		A542337E26B64C8C00DD003A /* MindiraTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MindiraTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		A542337E26B64C8C00DD003A /* MinderaTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MinderaTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		A542337F26B64C8D00DD003A /* MainViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerTest.swift; sourceTree = "<group>"; };
 		A542338526B671BD00DD003A /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		A542338726B6739000DD003A /* URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequest.swift; sourceTree = "<group>"; };
@@ -123,7 +125,9 @@
 		A542338D26B674ED00DD003A /* URLResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLResponse.swift; sourceTree = "<group>"; };
 		A542338F26B6756C00DD003A /* SessionDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDataTask.swift; sourceTree = "<group>"; };
 		A542339126B67F3900DD003A /* Cassette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cassette.swift; sourceTree = "<group>"; };
-		A542339526B6860900DD003A /* FlickrAPITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrAPITest.swift; sourceTree = "<group>"; };
+		A542339526B6860900DD003A /* FlickrPhotosAPITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrPhotosAPITest.swift; sourceTree = "<group>"; };
+		A542339726B689A200DD003A /* MockNetworkCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkCenter.swift; sourceTree = "<group>"; };
+		A542339926B68A2A00DD003A /* MockNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetwork.swift; sourceTree = "<group>"; };
 		A5D88E9A26B48C310016CC8F /* Mindera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mindera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5D88E9D26B48C310016CC8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5D88EA126B48C310016CC8F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -297,7 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				A542337F26B64C8D00DD003A /* MainViewControllerTest.swift */,
-				A542337E26B64C8C00DD003A /* MindiraTests-Bridging-Header.h */,
+				A542337E26B64C8C00DD003A /* MinderaTests-Bridging-Header.h */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -327,7 +331,9 @@
 		A542339426B685F200DD003A /* API */ = {
 			isa = PBXGroup;
 			children = (
-				A542339526B6860900DD003A /* FlickrAPITest.swift */,
+				A542339526B6860900DD003A /* FlickrPhotosAPITest.swift */,
+				A542339726B689A200DD003A /* MockNetworkCenter.swift */,
+				A542339926B68A2A00DD003A /* MockNetwork.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -574,8 +580,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A542339A26B68A2A00DD003A /* MockNetwork.swift in Sources */,
 				A542338026B64C8D00DD003A /* MainViewControllerTest.swift in Sources */,
-				A542339626B6860900DD003A /* FlickrAPITest.swift in Sources */,
+				A542339626B6860900DD003A /* FlickrPhotosAPITest.swift in Sources */,
+				A542339826B689A200DD003A /* MockNetworkCenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -778,20 +786,20 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NF5R33H474;
-				INFOPLIST_FILE = MindiraTests/Info.plist;
+				INFOPLIST_FILE = MinderaTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cdebruyn.MindiraTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cdebruyn.MinderaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "MindiraTests/View/MindiraTests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "MinderaTests/View/MinderaTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mindira.app/Mindira";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mindera.app/Mindera";
 			};
 			name = Debug;
 		};
@@ -803,19 +811,19 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NF5R33H474;
-				INFOPLIST_FILE = MindiraTests/Info.plist;
+				INFOPLIST_FILE = MinderaTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cdebruyn.MindiraTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cdebruyn.MinderaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "MindiraTests/View/MindiraTests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "MinderaTests/View/MinderaTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mindira.app/Mindira";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mindera.app/Mindera";
 			};
 			name = Release;
 		};
@@ -825,13 +833,13 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NF5R33H474;
-				INFOPLIST_FILE = MindiraUITests/Info.plist;
+				INFOPLIST_FILE = MinderaUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cdebruyn.MindiraUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cdebruyn.MinderaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -845,13 +853,13 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NF5R33H474;
-				INFOPLIST_FILE = MindiraUITests/Info.plist;
+				INFOPLIST_FILE = MinderaUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cdebruyn.MindiraUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cdebruyn.MinderaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

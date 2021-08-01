@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import Mindira
+@testable import Mindera
 
 
 class MainViewControllerTest: XCTestCase
