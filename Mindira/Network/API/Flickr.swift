@@ -57,7 +57,7 @@ extension NetworkCenter
     }
     
     @discardableResult
-    func getImage (source: URL) throws -> AnyPublisher <Data, URLError>
+    func getImage (photoId: String, source: URL) throws -> AnyPublisher <Data, URLError>
     {
         print("INFO: Get the image data with the label `Large Square`.")
         

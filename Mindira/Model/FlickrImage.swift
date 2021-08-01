@@ -11,3 +11,16 @@ struct FlickrImage : AnyModel
 {
     typealias Role = Data
 }
+
+struct FlickrImageResult : AnyModel
+{
+    typealias Role = Codable
+    
+    let photoId: String?
+    let data:    Data?
+    
+    let searchResult: FlickrSearchResult?
+    let sizeResult:   FlickrSizeResult?
+}
+
+

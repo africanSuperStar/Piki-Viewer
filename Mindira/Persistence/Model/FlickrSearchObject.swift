@@ -32,4 +32,13 @@ public final class FlickrSearchResultStorage : NSManagedObject
         
         return fetchRequest
     }
+    
+    public func single(for id: String) -> NSFetchRequest <FlickrSearchResultStorage>
+    {
+        let fetchRequest = NSFetchRequest<FlickrSearchResultStorage>(entityName: "FlickrSearchResult")
+        
+        fetchRequest.predicate = NSPredicate(format: "id == %@", id)
+        
+        return fetchRequest
+    }
 }

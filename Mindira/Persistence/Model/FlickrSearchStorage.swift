@@ -12,6 +12,36 @@ import CoreData
 // MARK: - Save Photos Search Result
 struct FlickrPhotosStorage
 {
+    static func savePhotos(flickrPhotos: FlickrPhotos, completion: @escaping (Error?) -> Void)
+    {
+        CoreDataManager.managedContext.perform
+        {
+            for searchResult in (flickrPhotos.photos?.photo ?? [])
+            {
+                let result = FlickrSearchResultStorage(context: CoreDataManager.managedContext)
+                
+                result.id       = searchResult.id       ?? ""
+                result.owner    = searchResult.owner    ?? ""
+                result.title    = searchResult.title    ?? ""
+                result.secret   = searchResult.secret   ?? ""
+                result.server   = searchResult.server   ?? ""
+                result.farm     = searchResult.farm     ?? 0
+                result.isPublic = searchResult.isPublic ?? 0
+                result.isFriend = searchResult.isFriend ?? 0
+                result.isFamily = searchResult.isFamily ?? 0
+            }
+            
+            do {
+                try CoreDataManager.managedContext.save()
+                completion(nil)
+            }
+            catch
+            {
+                completion(error)
+            }
+        }
+    }
+    
     static func savePhotos(searchResults: [FlickrSearchResult]) -> AnyPublisher <Void, Error>
     {
         CoreDataManager.managedContext.publisher

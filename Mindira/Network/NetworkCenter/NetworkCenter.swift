@@ -29,8 +29,8 @@ class NetworkCenter <T: AnyModel> : NSObject, INetworkCenter, URLSessionDelegate
         let configuration = URLSessionConfiguration.default
         
         configuration.waitsForConnectivity       = true
-        configuration.timeoutIntervalForRequest  = 30
-        configuration.timeoutIntervalForResource = 30
+        configuration.timeoutIntervalForRequest  = 2
+        configuration.timeoutIntervalForResource = 2
         
         self.scheduler = DispatchQueue(label: "network-scheduler",
                                        qos: .background,

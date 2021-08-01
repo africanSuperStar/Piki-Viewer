@@ -31,4 +31,13 @@ public final class FlickrSizeResultStorage : NSManagedObject
         
         return fetchRequest
     }
+    
+    public func single(for id: String) -> NSFetchRequest <FlickrSizeResultStorage>
+    {
+        let fetchRequest = NSFetchRequest<FlickrSizeResultStorage>(entityName: "FlickrSizeResult")
+        
+        fetchRequest.predicate = NSPredicate(format: "photoId == %@", id)
+        
+        return fetchRequest
+    }
 }

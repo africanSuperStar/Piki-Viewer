@@ -56,7 +56,7 @@ class MainViewController: UIViewController
     }
     
     override func viewDidLoad()
-    {    
+    {
         navigationItem.title = "Flickr Photo Search"
         
         photosController.delegate = self
@@ -105,7 +105,7 @@ extension MainViewController
             (cell, indexPath, photo) in
             
             cell.imageView.image = UIImage(data: photo.imageData)
-            cell.label.text      = photo.flickrSearch.title
+            cell.label.text      = photo.flickrSearch?.title
         }
         
         dataSource = UICollectionViewDiffableDataSource<Section, PhotosController.Photo>(

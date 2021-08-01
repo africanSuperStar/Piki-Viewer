@@ -41,6 +41,8 @@
 		A542337426B5FD5000DD003A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542337326B5FD5000DD003A /* CoreDataManager.swift */; };
 		A542337626B606BA00DD003A /* FlickrSizeObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542337526B606BA00DD003A /* FlickrSizeObject.swift */; };
 		A542337826B607C500DD003A /* FlickrSizeStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542337726B607C500DD003A /* FlickrSizeStorage.swift */; };
+		A542337A26B6106600DD003A /* FlickrImageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542337926B6106600DD003A /* FlickrImageObject.swift */; };
+		A542337C26B610E800DD003A /* FlickrImageStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542337B26B610E800DD003A /* FlickrImageStorage.swift */; };
 		A5D88E9E26B48C310016CC8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88E9D26B48C310016CC8F /* AppDelegate.swift */; };
 		A5D88EA226B48C310016CC8F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88EA126B48C310016CC8F /* MainViewController.swift */; };
 		A5D88EA726B48C310016CC8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5D88EA626B48C310016CC8F /* Assets.xcassets */; };
@@ -101,6 +103,8 @@
 		A542337326B5FD5000DD003A /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		A542337526B606BA00DD003A /* FlickrSizeObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrSizeObject.swift; sourceTree = "<group>"; };
 		A542337726B607C500DD003A /* FlickrSizeStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrSizeStorage.swift; sourceTree = "<group>"; };
+		A542337926B6106600DD003A /* FlickrImageObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrImageObject.swift; sourceTree = "<group>"; };
+		A542337B26B610E800DD003A /* FlickrImageStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrImageStorage.swift; sourceTree = "<group>"; };
 		A5D88E9A26B48C310016CC8F /* Mindira.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mindira.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5D88E9D26B48C310016CC8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5D88EA126B48C310016CC8F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -261,8 +265,10 @@
 			children = (
 				A542336F26B5F25400DD003A /* FlickrSearchObject.swift */,
 				A542337526B606BA00DD003A /* FlickrSizeObject.swift */,
+				A542337926B6106600DD003A /* FlickrImageObject.swift */,
 				A542337126B5F33900DD003A /* FlickrSearchStorage.swift */,
 				A542337726B607C500DD003A /* FlickrSizeStorage.swift */,
+				A542337B26B610E800DD003A /* FlickrImageStorage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -476,6 +482,7 @@
 				A542332B26B54A7800DD003A /* NetworkCenter+Headers.swift in Sources */,
 				A542335C26B5A75300DD003A /* FlickrSize.swift in Sources */,
 				A542335626B55E1500DD003A /* Flickr.swift in Sources */,
+				A542337A26B6106600DD003A /* FlickrImageObject.swift in Sources */,
 				A542332D26B54B2100DD003A /* NetworkCenter+URL.swift in Sources */,
 				A542336926B5E9FD00DD003A /* Mindera.xcdatamodeld in Sources */,
 				A542333D26B555C500DD003A /* Item.swift in Sources */,
@@ -486,6 +493,7 @@
 				A542333426B553C700DD003A /* INetwork+NetworkCenter.swift in Sources */,
 				A542332626B547E600DD003A /* NetworkCenter.swift in Sources */,
 				A542332426B5460800DD003A /* INetworkCenter.swift in Sources */,
+				A542337C26B610E800DD003A /* FlickrImageStorage.swift in Sources */,
 				A542336526B5BCBA00DD003A /* PhotoCell.swift in Sources */,
 				A542337026B5F25400DD003A /* FlickrSearchObject.swift in Sources */,
 				A542334D26B55C4F00DD003A /* SecureStoreError.swift in Sources */,
