@@ -11,7 +11,7 @@ import Combine
 
 extension NetworkCenter
 {
-    internal func decode <T : _T.Role> (_ data: Data, with response: URLResponse) throws -> T
+    internal func decode <T : _T.Role> (_ data: Data, with response: Foundation.HTTPURLResponse) throws -> T
     {
         try? validateResponse(response)
         
@@ -26,7 +26,7 @@ extension NetworkCenter
         return result
     }
     
-    internal func decodeItems <T : _T.Role> (_ data: Data, with response: URLResponse) throws -> [T]
+    internal func decodeItems <T : _T.Role> (_ data: Data, with response: Foundation.HTTPURLResponse) throws -> [T]
     {
         try? validateResponse(response)
         
@@ -42,16 +42,8 @@ extension NetworkCenter
 
 extension NetworkCenter
 {
-    internal func validateResponse(_ response: URLResponse) throws
+    internal func validateResponse(_ response: Foundation.HTTPURLResponse) throws
     {
-        guard let response = response as? HTTPURLResponse
-            else
-        {
-            print("FAILED HTTP Response: Failed to receive HTTP Response.")
-            
-            throw NetworkCenterError.failedToGetStatusCode
-        }
-        
         if 400..<499 ~= response.statusCode
         {
             print("FAILED HTTP Response: Expired Access Token")

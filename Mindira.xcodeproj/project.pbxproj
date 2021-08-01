@@ -45,6 +45,13 @@
 		A542337C26B610E800DD003A /* FlickrImageStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542337B26B610E800DD003A /* FlickrImageStorage.swift */; };
 		A542338026B64C8D00DD003A /* MainViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542337F26B64C8D00DD003A /* MainViewControllerTest.swift */; };
 		A542338326B66FA000DD003A /* Mixpanel in Frameworks */ = {isa = PBXBuildFile; productRef = A542338226B66FA000DD003A /* Mixpanel */; };
+		A542338626B671BD00DD003A /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542338526B671BD00DD003A /* Session.swift */; };
+		A542338826B6739000DD003A /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542338726B6739000DD003A /* URLRequest.swift */; };
+		A542338A26B673F300DD003A /* Interaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542338926B673F300DD003A /* Interaction.swift */; };
+		A542338C26B674A400DD003A /* HTTPURLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542338B26B674A400DD003A /* HTTPURLResponse.swift */; };
+		A542338E26B674ED00DD003A /* URLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542338D26B674ED00DD003A /* URLResponse.swift */; };
+		A542339026B6756C00DD003A /* SessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542338F26B6756C00DD003A /* SessionDataTask.swift */; };
+		A542339226B67F3900DD003A /* Cassette.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542339126B67F3900DD003A /* Cassette.swift */; };
 		A5D88E9E26B48C310016CC8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88E9D26B48C310016CC8F /* AppDelegate.swift */; };
 		A5D88EA226B48C310016CC8F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88EA126B48C310016CC8F /* MainViewController.swift */; };
 		A5D88EA726B48C310016CC8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5D88EA626B48C310016CC8F /* Assets.xcassets */; };
@@ -108,6 +115,13 @@
 		A542337B26B610E800DD003A /* FlickrImageStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrImageStorage.swift; sourceTree = "<group>"; };
 		A542337E26B64C8C00DD003A /* MindiraTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MindiraTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		A542337F26B64C8D00DD003A /* MainViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerTest.swift; sourceTree = "<group>"; };
+		A542338526B671BD00DD003A /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		A542338726B6739000DD003A /* URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequest.swift; sourceTree = "<group>"; };
+		A542338926B673F300DD003A /* Interaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interaction.swift; sourceTree = "<group>"; };
+		A542338B26B674A400DD003A /* HTTPURLResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPURLResponse.swift; sourceTree = "<group>"; };
+		A542338D26B674ED00DD003A /* URLResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLResponse.swift; sourceTree = "<group>"; };
+		A542338F26B6756C00DD003A /* SessionDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDataTask.swift; sourceTree = "<group>"; };
+		A542339126B67F3900DD003A /* Cassette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cassette.swift; sourceTree = "<group>"; };
 		A5D88E9A26B48C310016CC8F /* Mindira.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mindira.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5D88E9D26B48C310016CC8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5D88EA126B48C310016CC8F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +164,7 @@
 		A542331E26B52B6200DD003A /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				A542338426B6714600DD003A /* VHR */,
 				A542335426B55E0300DD003A /* API */,
 				A542334526B55C4F00DD003A /* SecureStore */,
 				A542332E26B54B8100DD003A /* Cache */,
@@ -283,6 +298,20 @@
 				A542337E26B64C8C00DD003A /* MindiraTests-Bridging-Header.h */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		A542338426B6714600DD003A /* VHR */ = {
+			isa = PBXGroup;
+			children = (
+				A542338526B671BD00DD003A /* Session.swift */,
+				A542338926B673F300DD003A /* Interaction.swift */,
+				A542338726B6739000DD003A /* URLRequest.swift */,
+				A542338D26B674ED00DD003A /* URLResponse.swift */,
+				A542338B26B674A400DD003A /* HTTPURLResponse.swift */,
+				A542338F26B6756C00DD003A /* SessionDataTask.swift */,
+				A542339126B67F3900DD003A /* Cassette.swift */,
+			);
+			path = VHR;
 			sourceTree = "<group>";
 		};
 		A5D88E9126B48C310016CC8F = {
@@ -494,6 +523,8 @@
 				A542332926B5481800DD003A /* AnyModel.swift in Sources */,
 				A542333C26B555C500DD003A /* Items.swift in Sources */,
 				A542337226B5F33900DD003A /* FlickrSearchStorage.swift in Sources */,
+				A542338626B671BD00DD003A /* Session.swift in Sources */,
+				A542339026B6756C00DD003A /* SessionDataTask.swift in Sources */,
 				A542332B26B54A7800DD003A /* NetworkCenter+Headers.swift in Sources */,
 				A542335C26B5A75300DD003A /* FlickrSize.swift in Sources */,
 				A542335626B55E1500DD003A /* Flickr.swift in Sources */,
@@ -502,9 +533,13 @@
 				A542336926B5E9FD00DD003A /* Mindera.xcdatamodeld in Sources */,
 				A542333D26B555C500DD003A /* Item.swift in Sources */,
 				A542336D26B5EFC100DD003A /* Scheduler.swift in Sources */,
+				A542338A26B673F300DD003A /* Interaction.swift in Sources */,
+				A542338E26B674ED00DD003A /* URLResponse.swift in Sources */,
 				A542334F26B55C4F00DD003A /* InternetProtocol.swift in Sources */,
 				A542333226B54CC400DD003A /* CacheManager.swift in Sources */,
+				A542338C26B674A400DD003A /* HTTPURLResponse.swift in Sources */,
 				A5D88E9E26B48C310016CC8F /* AppDelegate.swift in Sources */,
+				A542339226B67F3900DD003A /* Cassette.swift in Sources */,
 				A542333426B553C700DD003A /* INetwork+NetworkCenter.swift in Sources */,
 				A542332626B547E600DD003A /* NetworkCenter.swift in Sources */,
 				A542332426B5460800DD003A /* INetworkCenter.swift in Sources */,
@@ -512,6 +547,7 @@
 				A542336526B5BCBA00DD003A /* PhotoCell.swift in Sources */,
 				A542337026B5F25400DD003A /* FlickrSearchObject.swift in Sources */,
 				A542334D26B55C4F00DD003A /* SecureStoreError.swift in Sources */,
+				A542338826B6739000DD003A /* URLRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

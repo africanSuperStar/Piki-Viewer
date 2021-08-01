@@ -39,7 +39,9 @@ extension NetworkCenter
                 
                 print("HTTP: DATA RECIEVED \(value.data.debugDescription)")
                 
-                return try this.decodeItems(value.data, with: value.response)
+                guard let _response = value.response as? Foundation.HTTPURLResponse else { throw NetworkCenterError.failedToDecodeItems }
+                
+                return try this.decodeItems(value.data, with: _response)
             }
             .receive(on: scheduler)
             .retry(retries)
