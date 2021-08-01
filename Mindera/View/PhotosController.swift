@@ -112,54 +112,61 @@ extension PhotosController
 {
     private func generatePhotos(result: FlickrPhotos)
     {
-        DispatchQueue.global(qos: .userInteractive).async
-        {
-            self.photos.removeAll()
-        }
-        
         let lock = NSLock()
         
         guard let isRemote = CacheManager.isRemote.value(forKey: .isRemote) else { return }
         
         if !isRemote
         {
-            FlickrImageStorage.fetchImages()
-                .replaceError(with: [])
-                .subscribe(on: DispatchQueue.global(qos: .background))
-                .receive(on: DispatchQueue.global(qos: .background), options: .none)
-                .sink
-                {
-                    [weak self] results in guard let this = self else { return }
-                    
-                    results.forEach
+            if photos.isEmpty
+            {
+                FlickrImageStorage.fetchImages()
+                    .replaceError(with: [])
+                    .subscribe(on: DispatchQueue.global(qos: .background))
+                    .receive(on: DispatchQueue.global(qos: .background), options: .none)
+                    .sink
                     {
-                        guard let _photoId = $0.photoId else { return }
+                        [weak self] results in guard let this = self else { return }
                         
-                        let photo = Photo(
-                            photoId: _photoId,
-                            imageData: $0.data ?? Data(),
-                            flickrSearch: $0.searchResult,
-                            flickrSize: $0.sizeResult
-                        )
-                        
-                        DispatchQueue.global(qos: .background).async
+                        results.forEach
                         {
-                            lock.lock()
-                            this.photos.removeAll(where: { $0.photoId == _photoId })
-                            lock.unlock()
+                            guard let _photoId = $0.photoId else { return }
                             
-                            lock.lock()
-                            this.photos.append(photo)
-                            lock.unlock()
-
-                            this.delegate?.photosGenerated()
+                            let photo = Photo(
+                                photoId: _photoId,
+                                imageData: $0.data ?? Data(),
+                                flickrSearch: $0.searchResult,
+                                flickrSize: $0.sizeResult
+                            )
+                            
+                            DispatchQueue.global(qos: .background).async
+                            {
+                                lock.lock()
+                                this.photos.removeAll(where: { $0.photoId == _photoId })
+                                lock.unlock()
+                                
+                                lock.lock()
+                                this.photos.append(photo)
+                                lock.unlock()
+                                
+                                this.delegate?.photosGenerated()
+                            }
                         }
                     }
-                }
-                .cancel()
+                    .cancel()
+            }
         }
         else
         {
+            DispatchQueue.global(qos: .background).async
+            {
+                [weak self] in guard let this = self else { return }
+                    
+                lock.lock()
+                this.photos.removeAll()
+                lock.unlock()
+            }
+            
             FlickrPhotosStorage
                 .savePhotos(searchResults: result.photos?.photo ?? [])
                 .replaceError(with: ())
