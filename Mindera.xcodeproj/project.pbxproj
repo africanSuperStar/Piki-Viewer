@@ -52,6 +52,7 @@
 		A542338E26B674ED00DD003A /* URLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542338D26B674ED00DD003A /* URLResponse.swift */; };
 		A542339026B6756C00DD003A /* SessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542338F26B6756C00DD003A /* SessionDataTask.swift */; };
 		A542339226B67F3900DD003A /* Cassette.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542339126B67F3900DD003A /* Cassette.swift */; };
+		A542339626B6860900DD003A /* FlickrAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542339526B6860900DD003A /* FlickrAPITest.swift */; };
 		A5D88E9E26B48C310016CC8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88E9D26B48C310016CC8F /* AppDelegate.swift */; };
 		A5D88EA226B48C310016CC8F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88EA126B48C310016CC8F /* MainViewController.swift */; };
 		A5D88EA726B48C310016CC8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5D88EA626B48C310016CC8F /* Assets.xcassets */; };
@@ -122,15 +123,16 @@
 		A542338D26B674ED00DD003A /* URLResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLResponse.swift; sourceTree = "<group>"; };
 		A542338F26B6756C00DD003A /* SessionDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDataTask.swift; sourceTree = "<group>"; };
 		A542339126B67F3900DD003A /* Cassette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cassette.swift; sourceTree = "<group>"; };
-		A5D88E9A26B48C310016CC8F /* Mindira.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mindira.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A542339526B6860900DD003A /* FlickrAPITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrAPITest.swift; sourceTree = "<group>"; };
+		A5D88E9A26B48C310016CC8F /* Mindera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mindera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5D88E9D26B48C310016CC8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5D88EA126B48C310016CC8F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A5D88EA626B48C310016CC8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5D88EA926B48C310016CC8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5D88EAB26B48C310016CC8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A5D88EB026B48C310016CC8F /* MindiraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MindiraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5D88EB026B48C310016CC8F /* MinderaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MinderaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5D88EB626B48C310016CC8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A5D88EBB26B48C310016CC8F /* MindiraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MindiraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5D88EBB26B48C310016CC8F /* MinderaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MinderaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5D88EBF26B48C310016CC8F /* MindiraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindiraUITests.swift; sourceTree = "<group>"; };
 		A5D88EC126B48C310016CC8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -314,12 +316,28 @@
 			path = VHR;
 			sourceTree = "<group>";
 		};
+		A542339326B685EA00DD003A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A542339426B685F200DD003A /* API */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		A542339426B685F200DD003A /* API */ = {
+			isa = PBXGroup;
+			children = (
+				A542339526B6860900DD003A /* FlickrAPITest.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		A5D88E9126B48C310016CC8F = {
 			isa = PBXGroup;
 			children = (
-				A5D88E9C26B48C310016CC8F /* Mindira */,
-				A5D88EB326B48C310016CC8F /* MindiraTests */,
-				A5D88EBE26B48C310016CC8F /* MindiraUITests */,
+				A5D88E9C26B48C310016CC8F /* Mindera */,
+				A5D88EB326B48C310016CC8F /* MinderaTests */,
+				A5D88EBE26B48C310016CC8F /* MinderaUITests */,
 				A5D88E9B26B48C310016CC8F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -327,14 +345,14 @@
 		A5D88E9B26B48C310016CC8F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A5D88E9A26B48C310016CC8F /* Mindira.app */,
-				A5D88EB026B48C310016CC8F /* MindiraTests.xctest */,
-				A5D88EBB26B48C310016CC8F /* MindiraUITests.xctest */,
+				A5D88E9A26B48C310016CC8F /* Mindera.app */,
+				A5D88EB026B48C310016CC8F /* MinderaTests.xctest */,
+				A5D88EBB26B48C310016CC8F /* MinderaUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A5D88E9C26B48C310016CC8F /* Mindira */ = {
+		A5D88E9C26B48C310016CC8F /* Mindera */ = {
 			isa = PBXGroup;
 			children = (
 				A542336626B5E9E700DD003A /* Persistence */,
@@ -346,33 +364,34 @@
 				A5D88EA826B48C310016CC8F /* LaunchScreen.storyboard */,
 				A5D88EAB26B48C310016CC8F /* Info.plist */,
 			);
-			path = Mindira;
+			path = Mindera;
 			sourceTree = "<group>";
 		};
-		A5D88EB326B48C310016CC8F /* MindiraTests */ = {
+		A5D88EB326B48C310016CC8F /* MinderaTests */ = {
 			isa = PBXGroup;
 			children = (
+				A542339326B685EA00DD003A /* Network */,
 				A542337D26B64C5E00DD003A /* View */,
 				A5D88EB626B48C310016CC8F /* Info.plist */,
 			);
-			path = MindiraTests;
+			path = MinderaTests;
 			sourceTree = "<group>";
 		};
-		A5D88EBE26B48C310016CC8F /* MindiraUITests */ = {
+		A5D88EBE26B48C310016CC8F /* MinderaUITests */ = {
 			isa = PBXGroup;
 			children = (
 				A5D88EBF26B48C310016CC8F /* MindiraUITests.swift */,
 				A5D88EC126B48C310016CC8F /* Info.plist */,
 			);
-			path = MindiraUITests;
+			path = MinderaUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A5D88E9926B48C310016CC8F /* Mindira */ = {
+		A5D88E9926B48C310016CC8F /* Mindera */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A5D88EC426B48C310016CC8F /* Build configuration list for PBXNativeTarget "Mindira" */;
+			buildConfigurationList = A5D88EC426B48C310016CC8F /* Build configuration list for PBXNativeTarget "Mindera" */;
 			buildPhases = (
 				A5D88E9626B48C310016CC8F /* Sources */,
 				A5D88E9726B48C310016CC8F /* Frameworks */,
@@ -382,17 +401,17 @@
 			);
 			dependencies = (
 			);
-			name = Mindira;
+			name = Mindera;
 			packageProductDependencies = (
 				A542338226B66FA000DD003A /* Mixpanel */,
 			);
 			productName = Mindira;
-			productReference = A5D88E9A26B48C310016CC8F /* Mindira.app */;
+			productReference = A5D88E9A26B48C310016CC8F /* Mindera.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A5D88EAF26B48C310016CC8F /* MindiraTests */ = {
+		A5D88EAF26B48C310016CC8F /* MinderaTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A5D88EC726B48C310016CC8F /* Build configuration list for PBXNativeTarget "MindiraTests" */;
+			buildConfigurationList = A5D88EC726B48C310016CC8F /* Build configuration list for PBXNativeTarget "MinderaTests" */;
 			buildPhases = (
 				A5D88EAC26B48C310016CC8F /* Sources */,
 				A5D88EAD26B48C310016CC8F /* Frameworks */,
@@ -403,14 +422,14 @@
 			dependencies = (
 				A5D88EB226B48C310016CC8F /* PBXTargetDependency */,
 			);
-			name = MindiraTests;
+			name = MinderaTests;
 			productName = MindiraTests;
-			productReference = A5D88EB026B48C310016CC8F /* MindiraTests.xctest */;
+			productReference = A5D88EB026B48C310016CC8F /* MinderaTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		A5D88EBA26B48C310016CC8F /* MindiraUITests */ = {
+		A5D88EBA26B48C310016CC8F /* MinderaUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A5D88ECA26B48C310016CC8F /* Build configuration list for PBXNativeTarget "MindiraUITests" */;
+			buildConfigurationList = A5D88ECA26B48C310016CC8F /* Build configuration list for PBXNativeTarget "MinderaUITests" */;
 			buildPhases = (
 				A5D88EB726B48C310016CC8F /* Sources */,
 				A5D88EB826B48C310016CC8F /* Frameworks */,
@@ -421,9 +440,9 @@
 			dependencies = (
 				A5D88EBD26B48C310016CC8F /* PBXTargetDependency */,
 			);
-			name = MindiraUITests;
+			name = MinderaUITests;
 			productName = MindiraUITests;
-			productReference = A5D88EBB26B48C310016CC8F /* MindiraUITests.xctest */;
+			productReference = A5D88EBB26B48C310016CC8F /* MinderaUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -449,7 +468,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A5D88E9526B48C310016CC8F /* Build configuration list for PBXProject "Mindira" */;
+			buildConfigurationList = A5D88E9526B48C310016CC8F /* Build configuration list for PBXProject "Mindera" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -465,9 +484,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A5D88E9926B48C310016CC8F /* Mindira */,
-				A5D88EAF26B48C310016CC8F /* MindiraTests */,
-				A5D88EBA26B48C310016CC8F /* MindiraUITests */,
+				A5D88E9926B48C310016CC8F /* Mindera */,
+				A5D88EAF26B48C310016CC8F /* MinderaTests */,
+				A5D88EBA26B48C310016CC8F /* MinderaUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -556,6 +575,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A542338026B64C8D00DD003A /* MainViewControllerTest.swift in Sources */,
+				A542339626B6860900DD003A /* FlickrAPITest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -572,12 +592,12 @@
 /* Begin PBXTargetDependency section */
 		A5D88EB226B48C310016CC8F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A5D88E9926B48C310016CC8F /* Mindira */;
+			target = A5D88E9926B48C310016CC8F /* Mindera */;
 			targetProxy = A5D88EB126B48C310016CC8F /* PBXContainerItemProxy */;
 		};
 		A5D88EBD26B48C310016CC8F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A5D88E9926B48C310016CC8F /* Mindira */;
+			target = A5D88E9926B48C310016CC8F /* Mindera */;
 			targetProxy = A5D88EBC26B48C310016CC8F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -649,6 +669,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = Mindera;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -703,6 +724,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = Mindera;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -717,12 +739,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NF5R33H474;
-				INFOPLIST_FILE = Mindira/Info.plist;
+				INFOPLIST_FILE = Mindera/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cdebruyn.Mindira;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cdebruyn.Mindera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -736,12 +758,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NF5R33H474;
-				INFOPLIST_FILE = Mindira/Info.plist;
+				INFOPLIST_FILE = Mindera/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cdebruyn.Mindira;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cdebruyn.Mindera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -840,7 +862,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A5D88E9526B48C310016CC8F /* Build configuration list for PBXProject "Mindira" */ = {
+		A5D88E9526B48C310016CC8F /* Build configuration list for PBXProject "Mindera" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A5D88EC226B48C310016CC8F /* Debug */,
@@ -849,7 +871,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A5D88EC426B48C310016CC8F /* Build configuration list for PBXNativeTarget "Mindira" */ = {
+		A5D88EC426B48C310016CC8F /* Build configuration list for PBXNativeTarget "Mindera" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A5D88EC526B48C310016CC8F /* Debug */,
@@ -858,7 +880,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A5D88EC726B48C310016CC8F /* Build configuration list for PBXNativeTarget "MindiraTests" */ = {
+		A5D88EC726B48C310016CC8F /* Build configuration list for PBXNativeTarget "MinderaTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A5D88EC826B48C310016CC8F /* Debug */,
@@ -867,7 +889,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A5D88ECA26B48C310016CC8F /* Build configuration list for PBXNativeTarget "MindiraUITests" */ = {
+		A5D88ECA26B48C310016CC8F /* Build configuration list for PBXNativeTarget "MinderaUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A5D88ECB26B48C310016CC8F /* Debug */,
