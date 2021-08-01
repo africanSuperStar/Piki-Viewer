@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -43,11 +43,12 @@
 		A542337826B607C500DD003A /* FlickrSizeStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542337726B607C500DD003A /* FlickrSizeStorage.swift */; };
 		A542337A26B6106600DD003A /* FlickrImageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542337926B6106600DD003A /* FlickrImageObject.swift */; };
 		A542337C26B610E800DD003A /* FlickrImageStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542337B26B610E800DD003A /* FlickrImageStorage.swift */; };
+		A542338026B64C8D00DD003A /* MainViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A542337F26B64C8D00DD003A /* MainViewControllerTest.swift */; };
+		A542338326B66FA000DD003A /* Mixpanel in Frameworks */ = {isa = PBXBuildFile; productRef = A542338226B66FA000DD003A /* Mixpanel */; };
 		A5D88E9E26B48C310016CC8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88E9D26B48C310016CC8F /* AppDelegate.swift */; };
 		A5D88EA226B48C310016CC8F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88EA126B48C310016CC8F /* MainViewController.swift */; };
 		A5D88EA726B48C310016CC8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5D88EA626B48C310016CC8F /* Assets.xcassets */; };
 		A5D88EAA26B48C310016CC8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5D88EA826B48C310016CC8F /* LaunchScreen.storyboard */; };
-		A5D88EB526B48C310016CC8F /* MindiraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88EB426B48C310016CC8F /* MindiraTests.swift */; };
 		A5D88EC026B48C310016CC8F /* MindiraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88EBF26B48C310016CC8F /* MindiraUITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -105,6 +106,8 @@
 		A542337726B607C500DD003A /* FlickrSizeStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrSizeStorage.swift; sourceTree = "<group>"; };
 		A542337926B6106600DD003A /* FlickrImageObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrImageObject.swift; sourceTree = "<group>"; };
 		A542337B26B610E800DD003A /* FlickrImageStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrImageStorage.swift; sourceTree = "<group>"; };
+		A542337E26B64C8C00DD003A /* MindiraTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MindiraTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		A542337F26B64C8D00DD003A /* MainViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerTest.swift; sourceTree = "<group>"; };
 		A5D88E9A26B48C310016CC8F /* Mindira.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mindira.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5D88E9D26B48C310016CC8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5D88EA126B48C310016CC8F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -112,7 +115,6 @@
 		A5D88EA926B48C310016CC8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5D88EAB26B48C310016CC8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5D88EB026B48C310016CC8F /* MindiraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MindiraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A5D88EB426B48C310016CC8F /* MindiraTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindiraTests.swift; sourceTree = "<group>"; };
 		A5D88EB626B48C310016CC8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5D88EBB26B48C310016CC8F /* MindiraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MindiraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5D88EBF26B48C310016CC8F /* MindiraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindiraUITests.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A542338326B66FA000DD003A /* Mixpanel in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +276,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		A542337D26B64C5E00DD003A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A542337F26B64C8D00DD003A /* MainViewControllerTest.swift */,
+				A542337E26B64C8C00DD003A /* MindiraTests-Bridging-Header.h */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		A5D88E9126B48C310016CC8F = {
 			isa = PBXGroup;
 			children = (
@@ -311,7 +323,7 @@
 		A5D88EB326B48C310016CC8F /* MindiraTests */ = {
 			isa = PBXGroup;
 			children = (
-				A5D88EB426B48C310016CC8F /* MindiraTests.swift */,
+				A542337D26B64C5E00DD003A /* View */,
 				A5D88EB626B48C310016CC8F /* Info.plist */,
 			);
 			path = MindiraTests;
@@ -343,6 +355,7 @@
 			);
 			name = Mindira;
 			packageProductDependencies = (
+				A542338226B66FA000DD003A /* Mixpanel */,
 			);
 			productName = Mindira;
 			productReference = A5D88E9A26B48C310016CC8F /* Mindira.app */;
@@ -398,6 +411,7 @@
 					};
 					A5D88EAF26B48C310016CC8F = {
 						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1250;
 						TestTargetID = A5D88E9926B48C310016CC8F;
 					};
 					A5D88EBA26B48C310016CC8F = {
@@ -416,6 +430,7 @@
 			);
 			mainGroup = A5D88E9126B48C310016CC8F;
 			packageReferences = (
+				A542338126B66FA000DD003A /* XCRemoteSwiftPackageReference "mixpanel-swift" */,
 			);
 			productRefGroup = A5D88E9B26B48C310016CC8F /* Products */;
 			projectDirPath = "";
@@ -504,7 +519,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5D88EB526B48C310016CC8F /* MindiraTests.swift in Sources */,
+				A542338026B64C8D00DD003A /* MainViewControllerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -702,6 +717,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NF5R33H474;
 				INFOPLIST_FILE = MindiraTests/Info.plist;
@@ -713,6 +729,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cdebruyn.MindiraTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MindiraTests/View/MindiraTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mindira.app/Mindira";
@@ -724,6 +742,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NF5R33H474;
 				INFOPLIST_FILE = MindiraTests/Info.plist;
@@ -735,6 +754,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cdebruyn.MindiraTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MindiraTests/View/MindiraTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mindira.app/Mindira";
@@ -821,6 +841,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A542338126B66FA000DD003A /* XCRemoteSwiftPackageReference "mixpanel-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mixpanel/mixpanel-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.10.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A542338226B66FA000DD003A /* Mixpanel */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A542338126B66FA000DD003A /* XCRemoteSwiftPackageReference "mixpanel-swift" */;
+			productName = Mixpanel;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		A542336726B5E9FD00DD003A /* Mindera.xcdatamodeld */ = {

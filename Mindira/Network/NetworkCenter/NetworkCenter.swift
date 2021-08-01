@@ -29,8 +29,8 @@ class NetworkCenter <T: AnyModel> : NSObject, INetworkCenter, URLSessionDelegate
         let configuration = URLSessionConfiguration.default
         
         configuration.waitsForConnectivity       = true
-        configuration.timeoutIntervalForRequest  = 2
-        configuration.timeoutIntervalForResource = 2
+        configuration.timeoutIntervalForRequest  = 15
+        configuration.timeoutIntervalForResource = 15
         
         self.scheduler = DispatchQueue(label: "network-scheduler",
                                        qos: .background,
@@ -55,5 +55,7 @@ class NetworkCenter <T: AnyModel> : NSObject, INetworkCenter, URLSessionDelegate
                                   delegate: self,
                                   delegateQueue: nil
         )
+        
+        // TODO: SSL Pinning
     }
 }
